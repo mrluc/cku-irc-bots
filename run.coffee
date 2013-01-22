@@ -11,11 +11,8 @@ log = (args...)->
 
 twit.verifyCredentials(log)
 
-isdev = (msg)->
-  keywords = ['dev','practice','2013']
-  for tag in tw_txt.extractHashtags( msg )
-    return yes for s in keywords when msg.toLowerCase().indexOf(s) > -1
-  no
+isdev = (msg)-> /\#/.test( msg )
+
 islong = (msg)-> msg.length? and msg.length > 15
 
 irc.should_publish = (msg)->
