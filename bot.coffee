@@ -21,7 +21,10 @@ class PublishBot
       @publish message
 
   inform_publishing: (message)=>
-    @client.say @channel, "Totally tweeting this: '#{ message }'"
+    if message.length > 140
+      @client.say @channel, "Sorry buddy your tweet is tOoOoOoOoOo long!"
+    else
+      @client.say @channel, "Totally tweeting this: '#{ message }'"
 
 exports.PublishBot = PublishBot
 exports.newbot = (name, channel)->
