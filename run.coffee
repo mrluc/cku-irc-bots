@@ -14,7 +14,7 @@ twit.verifyCredentials(log)
 isdev = (msg)->
   keywords = ['dev','practice','2013']
   for tag in tw_txt.extractHashtags( msg )
-    return yes for s in keywords when msg.indexOf(s) > -1
+    return yes for s in keywords when msg.indexOf(s.toLowerCase()) > -1
   no
 islong = (msg)-> msg.length? and msg.length > 15
 
