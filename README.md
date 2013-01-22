@@ -15,3 +15,5 @@ Clone, and then create `irc_config.coffee` and
 Twitter config should just set module.exports to the hash
 that `ntwitter` initializes with; irc config, a hash with `server`,
 `channel` and `name` (for username of bot).
+
+Open-sourced under the IWSU License.
