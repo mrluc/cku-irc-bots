@@ -11,7 +11,7 @@ log = (args...)->
 
 twit.verifyCredentials(log)
 
-isdev = (msg)-> /#/.test(msg)
+isdev = (msg)->
   tw_txt.extractHashtags( msg ).length > 0
 
 islong = (msg)-> msg.length? and msg.length > 15
