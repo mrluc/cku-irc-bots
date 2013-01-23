@@ -17,9 +17,7 @@ class ResponderBot
 
   match: (s)=>
     for {recognize, respond} in @patterns when info = s.match recognize
-      respond info, s, (response) =>
-        console.log response
-        @say response
+      respond info, s, (response) => @say response
 
   handle_message: (args..., msg) =>
     console.log( msg )
