@@ -15,7 +15,7 @@ class PublishBot
     console.log msg.nick
 
     for s in ["bingbot", "tweeto", "jarjarmuppet"] when s is msg.nick
-      @shutup s if one_in 10
+      @shutup s if one_in 100
       return yes
     no
   extract_channel_message: (msg)=>
