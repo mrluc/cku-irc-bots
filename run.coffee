@@ -1,21 +1,30 @@
-{PublishBot} = require './bot'
-tw_opts = require './twitter_config'
-tw_txt = require 'twitter-text'
+ResponderBot = require './responderbot'
+{SearchClient} = require 'ddg-api'
 irc = require './irc_config'
-
-twitter = require 'ntwitter'
-twit = new twitter tw_opts
 
 log = (args...)-> console.log arg for arg in args
 
-twit.verifyCredentials( log )
+irc.name = "derpo"
+irc.connect = yes
 
-islong = (msg)-> msg.length? and msg.length > 15
-istweet = (msg)-> tw_txt.extractHashtags( msg ).length > 0
+client = new SearchClient useSSL: yes
 
-irc.publish = (msg)-> twit.updateStatus( msg, log )
-irc.should_publish = (msg)->
-  return no for valid in [ istweet, islong ] when not valid msg
-  yes
+bot = new ResponderBot irc # connect: no
+bot.should_ignore = -> no
+bot.patterns =  [
+  recognize: /uniquestring/
+  respond: (matchinfo, original_message, respond)->
+    console.log "----------"
+    log matchinfo
+    respond "yay hamburgers"
+,
+  recognize: /what about (\w+)/
+  respond: (match, o, respond)->
+    thing = match[1..].join(" ").toLowerCase()
+    nocruft = (s,thing)->
+      s.replace("#{thing} definition: ", "")
+    client.search thing, (error,response,data)->
+      respond "#{thing} is #{nocruft data.Definition, thing}"
+]
 
-bot = new PublishBot( irc )
+# log bot.match "what about Bob"
