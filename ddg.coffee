@@ -29,7 +29,7 @@ bot.patterns =  [
 ,
   recognize: /who wins (between)* (\w+) and (\w+)\?/
   respond: (match, o, respond)->
-    winners = ['mrluc', 'ddg', 'derpo', 'tweeto', 'duckduckgo']
+    winners = ['white_stripes','blues','ruby','torpedo','lisp','macros','mrluc', 'ddg','derpo','tweeto','duckduckgo','zepplin']
     [n..., me, you] = match
     log [me,you]
     return respond person for person in [me, you] when person in winners
@@ -40,6 +40,8 @@ bot.patterns =  [
 ]
 
 unless irc.connect
-  #bot.match "what about cat heads"
   #bot.match "what about famous programmer"
   bot.match "who wins between mrluc and you?"
+
+  search = (s)-> client.search s, (rest..., d)-> log d
+  search "balls"
