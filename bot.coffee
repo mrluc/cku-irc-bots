@@ -20,11 +20,13 @@ class PublishBot
       @inform_publishing message
       @publish message
 
+  stripit: (s)->
+    s.replace nono, "[redacted]" for nono in ["bingbot", "camsnap"]
   inform_publishing: (message)=>
     if message.length > 140
       @client.say @channel, "Sorry buddy your tweet is tOoOoOoOoOo long!"
     else
-      @client.say @channel, "Totally tweeting this: '#{ message }'"
+      @client.say @channel, "Totally tweeting this: '#{ @stripit message }'"
 
 exports.PublishBot = PublishBot
 exports.newbot = (name, channel)->
