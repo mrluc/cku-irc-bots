@@ -13,7 +13,7 @@ class ResponderBot
     [chan, message] = msg.args
     message if chan is @channel
 
-  should_ignore: (str) -> yes
+  should_ignore: (msg) -> yes
 
   match: (s)=>
     for {recognize, respond} in @patterns when info = s.match recognize
@@ -24,18 +24,10 @@ class ResponderBot
   handle_message: (args..., msg) =>
     console.log( msg )
     return no if @should_ignore( msg )
-
-    message = @extract_channel_message( msg )
-    @match message
-
-  stripit: (s, list)->
-    (s = s.replace nono, "[redacted]") for nono in list
-    s
+    @match @extract_channel_message( msg )
 
   say: (message)=>
-    if @client
-      @client.say @channel, message
-    else
-      console.log "Saying: #{ message }"
+    @client.say @channel, message if @client
+    console.log "Saying: #{ message }"
 
 module.exports = ResponderBot
