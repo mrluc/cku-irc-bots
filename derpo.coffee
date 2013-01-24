@@ -1,8 +1,7 @@
-ResponderBot = require './responderbot'
+Responder = require './responderbot'
 {SearchClient} = require 'ddg-api'
-irc = require './irc_config'
 
-class Derpo extends ResponderBot
+class Derpo extends Responder
   log = (args...)-> console.log arg for arg in args
   constructor: ( config )->
     config.name = "derpo"
@@ -37,7 +36,7 @@ class Derpo extends ResponderBot
   nocruft: (s,thing)->
     s.replace("#{thing} definition: ", "")
 
-bot = new DerpoBot irc
+bot = new Derpo require( './irc_config' )
 
 unless irc.connect
   bot.match "what about the british empire"
