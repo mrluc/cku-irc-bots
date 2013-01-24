@@ -7,7 +7,7 @@ ddgSomethin = (d)->
   d.AbstractText or d.Definition or d.RelatedTopics?.Text or "dunno man"
 
 irc.name = "derpo"
-irc.connect = yes
+irc.connect = no
 
 client = new SearchClient useSSL: yes
 
@@ -15,8 +15,9 @@ bot = new ResponderBot irc # connect: no
 bot.should_ignore = (msg) -> no
 
 bot.patterns =  [
-  recognize: /what about (.+)*/
+  recognize: re /what about (.+)*/
   respond: (match, o, respond)->
+    console.log [match,o,respond ]
     thing = match[1..].join(" ").toLowerCase()
     return respond "that guy is awesome" if thing is 'mrluc'
     log match
@@ -27,9 +28,10 @@ bot.patterns =  [
       answer = ddgSomethin data
       respond nocruft answer, thing
 ,
-  recognize: /who wins (between)* (\w+) and (\w+)\?/
+  recognize: re /who wins (between)* (\w+) and (\w+)\?/
   respond: (match, o, respond)->
-    winners = ['white_stripes','blues','ruby','torpedo','lisp','macros','mrluc', 'ddg','derpo','tweeto','duckduckgo','zepplin']
+    winners = ['white_stripes','blues','ruby','torpedo','lisp',
+      'macros','mrluc', 'ddg','derpo','tweeto','duckduckgo','zepplin']
     [n..., me, you] = match
     log [me,you]
     return respond person for person in [me, you] when person in winners
@@ -40,8 +42,7 @@ bot.patterns =  [
 ]
 
 unless irc.connect
-  #bot.match "what about famous programmer"
-  bot.match "who wins between mrluc and you?"
+  bot.match "what about the british empire"
+  # bot.match "who wins between mrluc and you?"
 
   search = (s)-> client.search s, (rest..., d)-> log d
-  search "balls"

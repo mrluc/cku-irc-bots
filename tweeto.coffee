@@ -1,5 +1,42 @@
-irc = require 'irc'
+#irc = require 'irc
+ResponderBot = require './responderbot'
+Twitter = require 'ntwitter'
+TweetText = require 'twitter-text'
+log = (args...)-> console.log s for s in args
 
+class Tweeto extends ResponderBot
+  constructor: (twitter_creds, config)->
+    @twit = new Twitter twitter_creds
+    @twit.verifyCredentials( log )
+    config.name = 'tweeto'
+    config.connect = no
+    super config
+
+    @patterns = [
+      recognize: (s)=> yes #not @too_long(s) and @is_tweet(s)
+      respond: (match, msg, respond)=>
+        console.log "Hey we're trying"
+        @twit.updateStatus msg, log
+        @inform_publishing msg
+    ]
+
+  too_long: (msg)-> msg.length? and msg.length > 15
+  is_tweet: (msg)-> TweetText.extractHashtags( msg ).length > 0
+
+  inform_publishing: (message)=>
+    @say if message.length > 140
+      "Sorry buddy your tweet is tOoOoOoOoOo long!"
+    else
+      "Totally tweeting this: '#{ @stripit message }'"
+  stripit: (s)->
+    (s = s.replace nono, "[redacted]") for nono in ["bingbot", "camsnap", "jarjarmuppet"]
+    s
+
+bot = new Tweeto require('./twitter_config'), require('./irc_config')
+
+bot.match "what up dummyheads #yeah #fun"
+
+###
 one_in = (n)-> parseInt( Math.random()*n ) is parseInt( Math.random()*n )
 
 class PublishBot
@@ -46,3 +83,4 @@ class PublishBot
 exports.PublishBot = PublishBot
 exports.newbot = (name, channel)->
   new Bot {server: 'irc.freenode.net', name, channel}
+###
