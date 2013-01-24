@@ -1,7 +1,12 @@
 irc = require 'irc'
-one_in = (n)-> parseInt( Math.random()*n ) is parseInt( Math.random()*n )
 
 class ResponderBot
+  log: (args...)-> console.log a for a in args
+
+  one_in: (n)-> parseInt( Math.random()*n ) is parseInt( Math.random()*n )
+
+  known_bots: ["bingbot", "camsnap", "jarjarmuppet", "derpo", "tweeto"]
+
   constructor: ({@connect, @server, @channel, @name, @patterns })->
     if @connect
       @client = new irc.Client @server, @name, channels: [@channel]
@@ -19,6 +24,7 @@ class ResponderBot
 
   match: (s)=>
     for {recognize, respond} in @patterns when matched = recognize s
+      console.log "MATCHED! ------------"
       return respond( matched, s, @say )
 
   handle_message: (args..., msg) =>
