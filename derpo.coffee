@@ -2,11 +2,9 @@ Responder = require './responderbot'
 {SearchClient} = require 'ddg-api'
 
 class Derpo extends Responder
-  log = (args...)-> console.log arg for arg in args
   constructor: ( config )->
     config.name = "derpo"
     config.connect = yes
-    @should_ignore = -> no
     super config
 
     @ddg = new SearchClient useSSL: yes
@@ -14,8 +12,7 @@ class Derpo extends Responder
     @patterns = [
       recognize: @re /what about (.+)*\?*/i
       respond: ([x, words...], o, respond) =>
-        term = words.join(" ").toLowerCase()
-        if term is 'mrluc'
+        if 'mrluc' is term = words.join(" ").toLowerCase()
           respond "that guy is awesome"
         else @ddg.search term, (error,response,data)=>
           answer = @interpret data
@@ -41,5 +38,3 @@ bot = new Derpo require( './irc_config' )
 unless bot.connect
   bot.match "what about the british empire"
   bot.match "who wins between mrluc and you?"
-
-  search = (s)-> client.search s, (rest..., d)-> log d
