@@ -7,23 +7,23 @@ class Derpo extends Responder
     config.name = "derpo"
     config.connect = yes
     @should_ignore = -> no
-    super irc
+    super config
 
     @ddg = new SearchClient useSSL: yes
 
     @patterns = [
-      recognize: @re /what about (.+)*/
-      respond: (match, o, respond) =>
-        thing = match[1..].join(" ").toLowerCase()
-        return respond "that guy is awesome" if thing is 'mrluc'
-
-        @ddg.search thing, (error,response,data)=>
+      recognize: @re /what about (.+)*\?*/i
+      respond: ([x, words...], o, respond) =>
+        term = words.join(" ").toLowerCase()
+        if term is 'mrluc'
+          respond "that guy is awesome"
+        else @ddg.search term, (error,response,data)=>
           answer = @interpret data
-          respond @nocruft( answer, thing )
+          respond @nocruft( answer, term )
     ,
-      recognize: @re /who wins (between)* (\w+) and (\w+)\?/
+      recognize: @re /who wins between (\w+) and (\w+)\?*/i
       respond: ([x..., me, you], o, respond)=>
-        winners = ['white_stripes','blues','ruby','torpedo','lisp',
+        winners = ['coffeescript','white_stripes','blues','ruby','torpedo','lisp',
           'macros','mrluc', 'ddg','derpo','tweeto','duckduckgo','zepplin']
         return respond person for person in [me, you] when person in winners
         respond if Math.random() > 0.5 then me else you
@@ -38,7 +38,7 @@ class Derpo extends Responder
 
 bot = new Derpo require( './irc_config' )
 
-unless irc.connect
+unless bot.connect
   bot.match "what about the british empire"
   bot.match "who wins between mrluc and you?"
 
