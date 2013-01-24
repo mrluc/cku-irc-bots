@@ -13,11 +13,13 @@ class ResponderBot
     [chan, message] = msg.args
     message if chan is @channel
 
+  re: (pat)-> (s)-> s.match pat
+
   should_ignore: (msg) -> yes
 
   match: (s)=>
-    for {recognize, respond} in @patterns when info = s.match recognize
-      respond info, s, (response) => @say response
+    for {recognize, respond} in @patterns when matched = recognize s
+      return respond( matched, s, @say )
 
   handle_message: (args..., msg) =>
     console.log( msg )
