@@ -1,9 +1,6 @@
 irc = require 'irc'
 
 class ResponderBot
-  log: (args...)-> console.log a for a in args
-
-  one_in: (n)-> parseInt( Math.random()*n ) is parseInt( Math.random()*n )
 
   known_bots: ["bingbot", "camsnap", "jarjarmuppet", "derpo", "tweeto"]
 
@@ -13,14 +10,12 @@ class ResponderBot
       @client.addListener 'message', @handle_message
     @patterns ?= []
 
-  extract_channel_message: ( msg ) =>
-    return "" unless msg? and msg.args? and msg.commandType is 'normal'
-    [chan, message] = msg.args
+  extract_channel_message: ( {commandType, args: [chan, message]} ) =>
     message if chan is @channel
 
   re: (pat)-> (s)-> s.match pat
 
-  should_ignore: (msg) -> yes
+  should_ignore: (msg) -> no
 
   match: (s)=>
     for {recognize, respond} in @patterns when matched = recognize s

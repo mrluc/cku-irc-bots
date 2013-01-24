@@ -7,7 +7,6 @@ class Tweeto extends Responder
     @twit = new Twitter twitter_creds
     @twit.verifyCredentials( log )
 
-    @should_ignore = (s)-> no
     config.name = 'tweeto'
     config.connect = yes
     super config
