@@ -1,5 +1,4 @@
 Responder = require './responderbot'
-{SearchClient} = require 'ddg-api' # @ddg = new SearchClient useSSL: yes
 google = require 'google'
 gmaps = require 'googlemaps'
 
@@ -48,9 +47,6 @@ class Derpo extends Responder
   pick1: (links, show = yes)->
     for {description, href} in links when description.length > 2
       return @cleanup "#{ description } #{ if show then href else '' }"
-
-  interpret_ddg: (d)->
-    d?.AbstractText or d?.Definition or d?.RelatedTopics?.Text or "dunno man"
 
   cleanup: (s)-> s=s.replace "   ", " "
 
