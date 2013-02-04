@@ -15,7 +15,7 @@ class ResponderBot
 
   re: (pat)-> (s)-> s.match pat
 
-  should_ignore: (msg) -> no
+  should_ignore: (msg) -> msg.nick in @known_bots
 
   match: (s)=>
     for {recognize, respond} in @patterns when matched = recognize s
