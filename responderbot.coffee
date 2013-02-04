@@ -13,18 +13,18 @@ class ResponderBot
   extract_channel_message: ( {commandType, args: [chan, message]} ) =>
     message if chan is @channel
 
-  re: (pat)-> (s)-> s.match pat
+  re: (pat)-> (s, rest...)-> s.match pat
 
   should_ignore: (msg) -> msg.nick in @known_bots
 
-  match: (s)=>
-    for {recognize, respond} in @patterns when matched = recognize s
-      return respond( matched, s, @say )
+  match: (s, msg_info)=>
+    for {recognize, respond} in @patterns when matched = recognize( s, msg_info )
+      return respond( matched, s, @say, msg_info )
 
   handle_message: (args..., msg) =>
     console.log( msg )
     return no if @should_ignore( msg )
-    @match @extract_channel_message( msg )
+    @match @extract_channel_message( msg ), msg
 
   say: (message)=>
     @client.say @channel, message if @client
