@@ -1,25 +1,5 @@
-{Downloader} = require "./downloader"
+DownloadedImageOperation = require "./dl_img_op"
 fs = require 'fs'
-
-# api is just the constructor + go method + callbacks
-# see impl + tests of Facer, below
-
-class DownloadedImageOperation
-
-  constructor: ({@url, @dir}) ->
-    @downloader = new Downloader @dir
-    @dir ?= "./tmp"
-
-  go: ( receives_final_image_path ) =>
-    @downloader.dl @url, ( @src_path, cleanup ) =>
-      console.log "src_path: #{ @src_path }"
-      @op =>
-        receives_final_image_path( @dst_path, cleanup )
-
-  # override this
-  op: (cb)=>
-    @dst_path = @src_path
-    cb()
 
 cv = require 'opencv'
 face_xml = "#{__dirname}/haarcascade_frontalface_alt2.xml"
@@ -130,4 +110,4 @@ exports.test = ->
     exec cmd, (rest...)->
       #setTimeout cleanup, 2000
 
-# exports.test()
+exports.test()

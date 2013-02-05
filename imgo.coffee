@@ -1,11 +1,14 @@
 fs = require 'fs'
 
 ResponderBot = require './responderbot'
-# via https://imgur.com/register/api_anon
+# get disposables via https://imgur.com/register/api_anon
 client_id = "879200d6e95a899c7b1453ed6a31dd37"
 imgur = require "imgur"
 imgur.setKey client_id
-{Facer} = require './cv/facer.coffee'
+
+# old ubuntu dies on node-cv because of libjpeg62
+#  and cv wants 8.
+# {Facer} = require './cv/facer.coffee'
 
 class Imgo extends ResponderBot
   constructor: (config) ->
@@ -64,4 +67,4 @@ bot = new Imgo require './irc_config'
 unless bot.connect
   # bot.match "hamsnap rafael correa"
   bot.match "http://ts1.mm.bing.net/th?id=H.4605008969401592&pid=1.7&w=228&h=149&c=7&rs=1.jpg"
-  bot.match "tits"
+  bot.match "tots"
