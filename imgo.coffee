@@ -1,19 +1,17 @@
 fs = require 'fs'
-
 ResponderBot = require './responderbot'
+
 # get disposables via https://imgur.com/register/api_anon
 client_id = "879200d6e95a899c7b1453ed6a31dd37"
 imgur = require "imgur"
 imgur.setKey client_id
 
-# old ubuntu dies on node-cv because of libjpeg62
-#  and cv wants 8.
-# {Facer} = require './cv/facer.coffee'
+{OverlayImage} = require './cv/dl_overlay'
 
 class Imgo extends ResponderBot
   constructor: (config) ->
     config.name = "imgo"
-    config.connect = yes
+    config.connect = no
     super config
 
     @patterns = [
@@ -35,13 +33,13 @@ class Imgo extends ResponderBot
 
   rand: (n)-> parseInt Math.random() * n
   onImage: (url, say) =>
-    facer = new Facer {
+    overlay = new OverlayImage {
       url,
       dir: "./cv/tmp"
-      faceplant: "./cv/ham#{ @rand 3 }.png"
+      overlay: "./cv/ham#{ @rand 3 }.png"
     }
 
-    facer.go (file_path, cleanup) =>
+    overlay.go (file_path, cleanup) =>
       @upload file_path, (link) =>
         if link
           say "More like #{ link }"
