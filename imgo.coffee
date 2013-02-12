@@ -6,6 +6,7 @@ client_id = "879200d6e95a899c7b1453ed6a31dd37"
 imgur = require "imgur"
 imgur.setKey client_id
 
+{Facer} = require './cv/facer.coffee'
 {OverlayImage} = require './cv/dl_overlay'
 
 class Imgo extends ResponderBot
@@ -16,11 +17,11 @@ class Imgo extends ResponderBot
 
     @patterns = [
       recognize: @re /^hamsnap (.+)*\?*/i
-      respond: (matched, o, say) ->
+      respond: ([first,matched,s...], o, say) ->
         say "camsnap #{ matched }"
     ,
       recognize: (s,msg_info) =>
-        if s.match /^http\:\/\/ts1.mm.bing.net\//i
+        if s.match /^http\:\/\/\w+.mm.bing.net\//i
           console.log "wow it matched"
           return s
         no
@@ -33,6 +34,11 @@ class Imgo extends ResponderBot
 
   rand: (n)-> parseInt Math.random() * n
   onImage: (url, say) =>
+    facer = new Facer {
+      url,
+      dir: "./cv/tmp"
+      faceplant: "./cv/ham#{ @rand 3 }.png"
+    }
     overlay = new OverlayImage {
       url,
       dir: "./cv/tmp"

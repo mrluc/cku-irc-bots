@@ -28,9 +28,9 @@ class Facer extends DownloadedImageOperation
   op: (cb)=>
     fs.readFile @faceplant, (err, ham_buf)=>
       throw ["Error loading placement image", err] if err
-
+      console.log "let's try this ..."
       cv.readImage @src_path, (err, im) =>
-        throw ["OpenCV read err: ", err] if err
+        console.log "tried. :("; throw ["OpenCV read err: ", err] if err
         fs.readFile @src_path, (err, src_buf) =>
           throw ["Error loading src img: ",err] if err
 
@@ -47,13 +47,17 @@ class Facer extends DownloadedImageOperation
           ham.src = ham_buf
 
           found_any = no
-
-          im.detectObject face_xml, {}, (err, faces) =>
+          # im.detectObject face_xml, {},
+          console.log "detecting features ..."
+          cfer = new cv.CascadeClassifier face_xml
+          cfer.detectMultiScale im, (err, faces) =>
+            console.log "tried that too" ; throw err if err
             for {x, y, width, height} in faces
 
               found_any = yes
 
               # rectangle of interest - for debugging opencv
+              console.log "okay, going to do ROI"
               roi = new cv.Matrix( im, x, y, width, height )
               roi.rectangle( [0,0], [width-2, height-2] )
 
@@ -110,4 +114,4 @@ exports.test = ->
     exec cmd, (rest...)->
       #setTimeout cleanup, 2000
 
-exports.test()
+# exports.test()
