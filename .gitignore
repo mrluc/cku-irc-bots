@@ -6,3 +6,6 @@ node_modules/
 tmp/
 cv/tmpth
 cv/*.png
+cv/*.jpg
+cv/*.jpeg
+cv/*.gif
