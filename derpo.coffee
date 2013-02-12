@@ -5,7 +5,7 @@ gmaps = require 'googlemaps'
 class Derpo extends Responder
   constructor: ( config )->
     config.name = "derpo"
-    config.connect = no
+    config.connect = yes
     super config
 
     @patterns = [
