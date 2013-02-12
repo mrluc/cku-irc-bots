@@ -21,14 +21,14 @@ class Imgo extends ResponderBot
         say "camsnap #{ matched }"
     ,
       recognize: (s,msg_info) =>
-        if s.match /^http\:\/\/\w+.mm.bing.net\//i
+        if msg_info.nick is "bingbot" and s.match /^http\:\/\/(.+)*(jpg|png)/i
+        #if s.match /^http\:\/\/\w+.mm.bing.net\//i
           console.log "wow it matched"
           return s
         no
       respond: (m, o, say) =>
         console.log m
         @onImage m, say
-        # say "Yay no breaky"
     ]
   should_ignore: -> no
 
@@ -71,4 +71,5 @@ bot = new Imgo require './irc_config'
 unless bot.connect
   # bot.match "hamsnap rafael correa"
   bot.match "http://ts1.mm.bing.net/th?id=H.4605008969401592&pid=1.7&w=228&h=149&c=7&rs=1.jpg"
+  bot.match "http://i.telegraph.co.uk/multimedia/archive/02206/spain-protest_2206735b.jpg"
   bot.match "tots"
