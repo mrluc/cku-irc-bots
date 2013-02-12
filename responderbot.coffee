@@ -8,6 +8,8 @@ class ResponderBot
     if @connect
       @client = new irc.Client @server, @name, channels: [@channel]
       @client.addListener 'message', @handle_message
+      @client.addListener 'error', (message) ->
+        console.log 'error: ', message
     @patterns ?= []
 
   extract_channel_message: ( {commandType, args: [chan, message]} ) =>

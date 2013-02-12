@@ -11,7 +11,7 @@ imgur.setKey client_id
 class Imgo extends ResponderBot
   constructor: (config) ->
     config.name = "imgo"
-    config.connect = no
+    config.connect = yes
     super config
 
     @patterns = [
