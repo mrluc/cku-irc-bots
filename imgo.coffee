@@ -22,7 +22,6 @@ class Imgo extends ResponderBot
     ,
       recognize: (s,msg_info) =>
         if msg_info.nick is "bingbot" and s.match /^http\:\/\/(.+)*(jpg|png)/i
-        #if s.match /^http\:\/\/\w+.mm.bing.net\//i
           console.log "wow it matched"
           return s
         no
