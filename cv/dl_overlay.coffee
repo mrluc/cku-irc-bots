@@ -23,25 +23,24 @@ class OverlayImage extends DownloadedImageOperation
     fs.readFile @src_path, (err, src_buf) =>
       throw err if err
       fs.readFile @overlay, (err, ham_buf)=>
-
         throw err if err
+        img = new Image
+        img.src = src_buf
+
         ham = new Image
         ham.src = ham_buf
 
-        img = new Image
-        img.src = src_buf
-        img.onload = =>
-          canvas = new Canvas img.width, img.height
-          ctx    = canvas.getContext '2d'
-          ctx.drawImage img, 0, 0, img.width, img.height
+        canvas = new Canvas img.width, img.height
+        ctx    = canvas.getContext '2d'
+        ctx.drawImage img, 0, 0, img.width, img.height
 
-          [w,h] = @maintainRatio [img.width, img.height], [ham.width, ham.height]
+        [w,h] = @maintainRatio [img.width, img.height], [ham.width, ham.height]
 
-          ctx.drawImage ham, 0, 0, w, h
-          @dst_path = "#{ @dir }/overlayed.png"
-          canvas.toBuffer (err, buf)=>
-            console.log @dst_path
-            fs.writeFile @dst_path, buf, => next()
+        ctx.drawImage ham, 0, 0, w, h
+        @dst_path = "#{ @dir }/overlayed.png"
+        canvas.toBuffer (err, buf)=>
+          console.log @dst_path
+          fs.writeFile @dst_path, buf, => next()
 
 exports.OverlayImage = OverlayImage
 
