@@ -30,7 +30,7 @@ class OverlayImage extends DownloadedImageOperation
 
         img = new Image
         img.src = src_buf
-        img.onload =>
+        img.onload = =>
           canvas = new Canvas img.width, img.height
           ctx    = canvas.getContext '2d'
           ctx.drawImage img, 0, 0, img.width, img.height
