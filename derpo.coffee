@@ -9,6 +9,12 @@ class Derpo extends Responder
     super config
 
     @patterns = [
+      recognize: @re /^hnsearch (.+)*/i
+      respond: (m,o,say) =>
+        term = @match_to_term m
+        google "#{ term } site:news.ycombinator.com", (err, next, links)=>
+          say @pick1 links
+    ,
       recognize: @re /^what about (.+)*\?*/i
       respond: (m, o, say) =>
         term = @match_to_term m
