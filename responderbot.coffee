@@ -1,6 +1,17 @@
 irc = require 'irc'
+_ = require 'underscore'
 
 class ResponderBot
+  refresh_nicks: ()=> @client.send "names", @channel
+  when_nicks_change: => console.log "default when_nicks_change called, #{@nicks}"
+  on_names: (nicks)=>
+    console.log "okay, received a names command! "
+    console.log @nicks
+    @nicks = (nick for nick of nicks) # for some reason, gives us name: '' pairs
+    @when_nicks_change @nicks
+  get_nicks: (fn)=>
+    @when_nicks_change = _.once fn
+    @refresh_nicks()
 
   known_bots: ["bingbot", "camsnap", "jarjarmuppet", "derpo", "tweeto"]
 

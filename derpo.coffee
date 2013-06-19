@@ -3,12 +3,18 @@ google = require 'google'
 gmaps = require 'googlemaps'
 
 class Derpo extends Responder
+
   constructor: ( config )->
     config.name = "derpo"
     config.connect = yes
     super config
-
+    @client.addListener "error", (m)-> console.log m
+    @client.addListener "names#{ @channel }", @on_names
     @patterns = [
+      recognize: @re /^homies\?/i
+      respond: (m,o,say) =>
+        @get_nicks => say @nicks.join " "
+    ,
       recognize: @re /^hnsearch (.+)*/i
       respond: (m,o,say) =>
         term = @match_to_term m
@@ -58,8 +64,8 @@ class Derpo extends Responder
   match_to_term: (m)-> m[1..].join(" ").toLowerCase()
 
   pick1: (links, show = yes)->
-    for {description, href} in links when description.length > 2
-      return @cleanup "#{ description } #{ if show then href else '' }"
+    for {description, title, href} in links when description.length > 2
+      return @cleanup "[#{title}] #{ description } #{ if show then href else '' }"
 
   cleanup: (s)-> s=s.replace "   ", " "
 
