@@ -8,8 +8,7 @@ class Derpo extends Responder
     config.name = "derpo"
     config.connect = yes
     super config
-    @client.addListener "error", (m)-> console.log m
-    @client.addListener "names#{ @channel }", @on_names
+
     @patterns = [
       recognize: @re /^homies\?/i
       respond: (m,o,say) =>
