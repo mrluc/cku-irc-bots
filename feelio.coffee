@@ -13,14 +13,14 @@ handle = (e)-> console.log e if e
 class Feelio extends Responder
 
   analyze: (feels)-> "Feelio feelings analysis: #{ JSON.stringify feels }".replace('\n',' ')
-
-  strongly_felt: (feels)=>
+  strongly_felt: (feels)->
     if feels.words > 3 and abs( feels.score ) < 3
       "Lots of feels in this comment."
     else if feels.score <= 3
       "Awww, come on gloomy gus!"
     else if feels.score >= 3
       "Yes! Positivity! I like it!"
+    else no
 
   constructor: ( config )->
     config.name = "feelio"
@@ -29,10 +29,7 @@ class Feelio extends Responder
 
     @patterns = [
       recognize: @re /^themfeels (.+)/i
-      respond: (m,o,say)=>
-        feel o, (e, feels) =>
-          handle e
-          say @analyze feels
+      respond: (m,o,say)=> feel o, (e, feels) => say @analyze feels
     ,
       recognize: @re /^(\S+ ){2,}/i
       respond: (m,o,say) =>
