@@ -16,7 +16,7 @@ class Feelio extends Responder
   strongly_felt: (feels)->
     if feels.words > 3 and abs( feels.score ) < 3
       "Lots of feels in this comment."
-    else if feels.score <= 3
+    else if feels.score <= -3
       "Awww, come on gloomy gus!"
     else if feels.score >= 3
       "Yes! Positivity! I like it!"
