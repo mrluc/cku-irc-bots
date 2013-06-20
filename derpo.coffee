@@ -1,6 +1,8 @@
 Responder = require './responderbot'
 google = require 'google'
 gmaps = require 'googlemaps'
+mdb = require 'nodejs-microdb'
+{Bayesian} = require 'classifier'
 
 class Derpo extends Responder
 
@@ -8,6 +10,12 @@ class Derpo extends Responder
     config.name = "derpo"
     config.connect = yes
     super config
+
+    @classifier = new Bayesian
+
+    # huh, cool. But let's try to train a classifier.
+    @client.addListener 'nick', (oldn, newn, chans, msg)=>
+      @say "#{oldn} changed to #{newn}"
 
     @patterns = [
       recognize: @re /^homies\?/i
