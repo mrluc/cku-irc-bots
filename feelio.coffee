@@ -7,7 +7,7 @@ rand = (n)-> floor random()*n
 hell_froze = -> rand( 100 ) is 66
 handle = (e)-> console.log e if e
 
-class Cheerio extends Responder
+class Feelio extends Responder
 
   analyze: (feels)-> "Feelio feelings analysis: #{ JSON.stringify feels }".replace('\n',' ')
 
@@ -17,11 +17,12 @@ class Cheerio extends Responder
     super config
 
     @patterns = [
-      recognize: @re /^(\S+ ){3,}/i
+      recognize: @re /^(\S+ ){2,}/i
       respond: (m,o,say) =>
         feel o, (e, feels)=>
-          say @analyze feels if hell_froze()
           handle e
+          console.log @analyze feels
+
           sez = if feels.words > 3 and abs( feels.score ) < 3
             "Lots of feels in this comment."
           else if feels.score < -3
@@ -31,4 +32,4 @@ class Cheerio extends Responder
           say sez if sez
     ]
 
-bot = new Cheerio require( './irc_config' )
+bot = new Feelio require( './irc_config' )
