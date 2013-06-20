@@ -1,0 +1,1250 @@
+18:33 *** mr_luc JOIN
+18:33 *** TOPIC it's strange (the nastybatin')
+                (hswe!~hswe@207.67.61.1 on Tue Jun 18 21:42:14
+                2013)
+18:33 *** NAMES @ChanServ @hswe @quezacotl bingbot crash0verride
+                cujojp dogshitbot DunksALot encrypt3d_wound gramps
+                griswold mkap mr_luc pema safetybot1 scorpio
+                will_i_was |h9|
+18:33 <mr_luc> omg derpo is down
+18:33 <mr_luc> what about derpo
+18:33 *** derpo JOIN
+18:34 <mr_luc> what about focus farther
+18:34 <derpo> [Focus Farther: space150 Upgrades to Version 32 |
+              space150] Apr 8, 2013 ... You must train your sites
+              beyond trends, apps and trinkets. Beyond the role of
+              budgets, deadlines and scope. Beyond the hype, rumors
+              and ...
+18:34 <cujojp> +1 derpo
+18:34 <cujojp> +1 mr_luc
+18:34 <will_i_was> +1 cujojp for good jam.  -1 spotify for not
+                   having this track
+18:35 <mr_luc> did I hear that engineers are in a different part of
+               space now?
+18:35 <will_i_was> mr_luc: "temporarily", refinishing the floors,
+                   repainting the walls
+18:35 *** hswe MODE +o mr_luc
+18:35 <will_i_was> we definitely got the better part of the deal,
+                   too. By the windows on 3rd ave
+18:36 <cujojp> mr_luc I tried cloning ur bots and couldnt get them
+               to start
+18:36 <cujojp> your irc_config must contain some magic
+18:36 <cujojp> :(
+18:38 <hswe> cujojp:
+18:38 <hswe> bot = new Derpo require( './irc_config' )
+18:39 <hswe> probably the login stuff
+18:39 <hswe> like queza has that too
+18:39 <cujojp> yea
+18:39 <hswe> because i need to auth with a password to save the
+             nick
+18:39 <mr_luc> cujojp: nah no magic, jussasec
+18:39 <hswe> mr_luc: do you know how to grab a names list with
+             node-irc?
+18:40 <mr_luc> it's just this: module.exports = {server:
+               'irc.freenode.net', channel: '#coolkidsusa'}
+18:40 <cujojp> bot = new irc.Client('irc.freenode.net',
+               'fukmahdad', debug: true, channels: ['#coolkidsusa']
+               )
+18:40 <cujojp> but derpo seems to use responderbot?
+18:41 <mr_luc> yeah all my bots use that ... maybe it should be a
+               mixin instead of a base class, but w/ev.
+18:41 *** f0ster JOIN
+18:41 *** f0ster QUIT Changing host
+18:41 *** f0ster JOIN
+18:42 <cujojp> http://cl.ly/image/3a3F0U3s040W
+18:42 <cujojp> wtf f0ster
+18:44 <mr_luc> hswe: hah, I think me and fraw were talking about
+               that one day at space ... I think you have to send
+               the actual irc command NAMES, but then node-irc has
+               a listener
+18:45 <hswe> mr_luc: yeah ive tried sending direct commands to the
+             server
+18:45 <mr_luc> but that for it to work 'right', without spamming
+               the channel with NAMES, you'd have to maintain a
+               list and add/subtract as people join
+18:45 <hswe> and can't seem to get anything
+18:45 <mr_luc> huh!
+18:45 <mr_luc> that's surprising ... like if derpo says "/me blah"
+               does IRC ignore it somehow?
+18:46 <hswe> like freenode accepts /NAMES #coolkidsusa
+18:46 <hswe> as a valid command
+18:46 <hswe> but returns nothing
+18:46 *** f0ster QUIT Ping timeout: 252 seconds
+18:47 /names
+18:47 *** NAMES @ChanServ @hswe @mr_luc @quezacotl bingbot
+                crash0verride cujojp derpo dogshitbot DunksALot
+                encrypt3d_wound gramps griswold mkap pema
+                safetybot1 scorpio will_i_was |h9|
+18:48 <mr_luc> but in this channel, if you just say "/names" ...
+18:48 <mr_luc> when I do, it gives me a list of names
+18:48 <cujojp> yah
+18:53 *** derpo QUIT Remote host closed the connection
+18:54 *** derpo JOIN
+18:54 <mr_luc> and I don't think it shows them to other people
+18:54 <mr_luc> homies?
+18:54 <derpo> /names
+18:55 *** derpo QUIT Remote host closed the connection
+18:55 <will_i_was> cujojp: http://rd.io/x/QVNgpzfHim8/
+18:55 <hswe> it shows when I use it from limechat sure
+18:55 <hswe> but i get nothing when sending it through
+             client.send()
+18:55 <hswe> I know node-irc has a event for it in someway
+18:55 <hswe> but that works on bot join
+18:56 <hswe> I need it to poll at a very specific time so when I do
+             this:
+18:56 <hswe> lotterytime
+18:56 <quezacotl> It's lottery time!
+18:56 <hswe> right now its just hardcoded array :\
+18:56 *** derpo JOIN
+18:56 <cujojp> +1 will_i_was for da jammm
+18:56 <mr_luc> homies?
+18:56 *** derpo QUIT Remote host closed the connection
+18:58 *** derpo JOIN
+18:58 <mr_luc> homies?
+18:58 *** derpo QUIT Remote host closed the connection
+18:58 *** derpo JOIN
+18:58 <mr_luc> homies?
+18:59 <cujojp> whats the score
+18:59 <scorpio> dubs has 1000000 points, gramps has 3 points,
+                COLORADO_MILF_COUGAR_MATURE_HUNTING_PERMIT_STICKER_DECAL
+                has 1 points, griswold has -85 points, bingbot has
+                420 points, points, has -85 points, quezacotl has 2
+                points, derpo has 1 points, mr_luc has 1 points,
+                will_i_was has 1 points
+18:59 <bingbot> dubs has 1000000 points, gramps has 3 points,
+                COLORADO_MILF_COUGAR_MATURE_HUNTING_PERMIT_STICKER_DECAL
+                has 1 points, griswold has -85 points, scorpio has
+                420 points, points, has -85 points, quezacotl has 2
+                points, derpo has 1 points, mr_luc has 1 points,
+                will_i_was has 1 points
+18:59 *** derpo QUIT Remote host closed the connection
+19:00 <cujojp> +1 http://i.imgur.com/xHo6CaJ.gif
+19:00 *** derpo JOIN
+19:00 <mr_luc> homies?
+19:01 *** derpo QUIT Remote host closed the connection
+19:01 *** derpo JOIN
+19:01 <derpo> oh yeah
+19:01 <derpo> [object Object]
+19:01 <derpo> [object Object]
+19:01 <cujojp> lol
+19:02 <mr_luc> heh I should be connecting to #scratch for this ...
+19:02 <cujojp> #discretemeetups
+19:02 <mr_luc> instead of here ... but yeah it works ... I'm
+               getting the names in console, it's easy-peasy
+19:02 <will_i_was> what about [object Object]
+19:02 <derpo> [HTML DOM Object Object - W3Schools] The Object
+              object represents an HTML object element. The
+              <object> tag is used to include objects such as
+              images, audio, videos, Java applets, ActiveX,
+              PDF, ...
+19:06 <cujojp> https://soundcloud.com/thisisdanielmoore/15-drake-look-what-youve-done
+               da jam
+19:06 <griswold> what about type casting
+19:06 <derpo> [Typecasting (acting) - Wikipedia, the free
+              encyclopedia] In TV, film, and theatre, typecasting
+              is the process by which a particular actor becomes
+              strongly identified with a specific character; one or
+              more particular roles  ; ...
+19:06 <griswold> gay
+19:07 *** safetybot1 QUIT Remote host closed the connection
+19:11 <mr_luc> interesting, to use these kinds of commands cleanly
+               takes a little thinking ... ie lots of things can
+               trigger a /names command, and so when you want to
+               trigger it yourself, you want a once-only callback,
+               right?
+19:11 [mr_luc mumbles to self]
+19:11 <cujojp> campsnap
+19:11 <bingbot> http://www.adirondackbasecamp.com/basecamp/wp-content/uploads/camp_counselor.jpg
+19:11 <cujojp> :)
+19:11 <DunksALot> Yessssss
+19:12 <mr_luc> she looks like she's going to kill me
+19:12 <cujojp> define: kill
+19:12 <mr_luc> what's a kill?
+19:12 <derpo> [Kill - Wikipedia, the free encyclopedia] Look up
+              kill in Wiktionary, the free dictionary. Kill may
+              refer to: To cause the death of a living organism.
+              Contents. 1 Geography; 2 Media; 3 Other uses; 4 See
+              also ... http://en.wikipedia.org/wiki/Kill
+19:12 <cujojp> hmmmm
+19:12 <cujojp> Where is kill?
+19:12 <derpo> It's here:
+              http://maps.googleapis.com/maps/api/staticmap?center=kill%3F&zoom=11&size=500x400&sensor=false&.jpg
+19:13 <cujojp> what about hiding from Dentists Appointment?
+19:13 <derpo> [Going to the Dentist - KidsHealth] x-rays During
+              your visit, the dental hygienist will take X-rays, or
+              pictures, of your teeth. X-rays are like superhuman
+              vision. They can show cavities hiding between   ...
+19:13 <cujojp> ugh
+19:13 *** derpo QUIT Remote host closed the connection
+19:13 *** derpo JOIN
+19:13 <derpo> [object Object]
+19:13 *** derpo QUIT Remote host closed the connection
+19:17 <encrypt3d_wound> mr_luc: you got the a command to get the
+                        names of peeps in the chat?
+19:17 <cujojp> / names
+19:18 <cujojp> /names
+19:18 <will_i_was> homies?
+19:18 <cujojp> homies
+19:18 <will_i_was> camsnap homies
+19:18 <bingbot> http://www.dragoart.com/tuts/pics/8/642/how-to-draw-homies-character-pelon.jpg
+19:18 <mr_luc> I turned it off but yeah it works, gotta use .send
+               instead of .say
+19:18 <will_i_was> homies.send(me, myHomies)
+19:19 <cujojp> homes.rape(campsnap)
+19:19 <bingbot> http://4.bp.blogspot.com/-t1kgSrAgzdo/UWJDBgXsRkI/AAAAAAAAAVk/KbYT-lwZKH4/s1600/summercamp.gif
+19:19 *** derpo JOIN
+19:19 *** derpo QUIT Remote host closed the connection
+19:19 <will_i_was> https://vimeo.com/9841493
+19:19 <cujojp> pema there is an intern here who looks like a
+               younger Morgan.
+19:20 *** derpo JOIN
+19:20 <mr_luc> homies?
+19:20 <mkap> homies?
+19:20 <cujojp> WTF will_i_was
+19:20 <mkap> yeah saw that lol
+19:20 <mkap> pretty badass
+19:20 <cujojp> http://i.minus.com/iycH0ckX0bPjn.gif
+19:20 <DunksALot> OMG
+19:21 <mkap> lol
+19:21 <mkap> snakes are cool
+19:21 [DunksALot hates snakes]
+19:21 <cujojp> http://i.imgur.com/AG8Iz37.gif
+19:21 *** derpo QUIT Remote host closed the connection
+19:21 <will_i_was> https://vimeo.com/35832133
+19:21 <cujojp> http://i.minus.com/iBigj4do2dXJ4.gif
+19:21 *** derpo JOIN
+19:21 <will_i_was> nbd, just have your 2 year old play with a giant
+                   snake that could consume him.
+19:21 <mr_luc> homies?
+19:22 <mkap> lol
+19:22 <will_i_was> that noise it makes when it hits the ground....
+19:22 <cujojp> gah
+19:22 <mkap> yeah lol
+19:22 <mkap> thud... hissssss
+19:22 *** derpo QUIT Remote host closed the connection
+19:23 *** derpo JOIN
+19:23 <mr_luc> homies?
+19:23 /join #scratch
+19:23 *** derpo QUIT Remote host closed the connection
+19:25 *** safetybot JOIN
+19:25 <cujojp> camsnap girls on film
+19:25 <bingbot> http://blog.nastygal.com/wp-content/uploads/2012/04/IMG1_Michal-Pudelka.jpg
+19:25 <cujojp> :)
+19:25 <DunksALot> haha
+19:25 <cujojp> camsnap girls on film
+19:25 <bingbot> http://www.thevehiclist.com/wp-content/uploads/2012/10/girls-on-film.jpg
+19:25 <cujojp> camsnap girls on film
+19:25 <bingbot> http://3.bp.blogspot.com/-wqfMuYMsrd8/TgZWJs4sm_I/AAAAAAAABO0/DWQgPjV_x8Q/s400/girls%252Bon%252Bfilm289.jpg
+19:26 <cujojp> help safetybot
+19:26 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/cashcat-guns.jpg
+19:26 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/cashcat-money-pile.jpg
+19:26 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/cashcat-passport.jpg
+19:26 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/cashcat-jail.jpg
+19:26 <will_i_was> ....
+19:26 <cujojp> Woah!
+19:26 <cujojp> New images
+19:26 <will_i_was> ... cats.
+19:26 <mkap> nice
+19:26 <cujojp> -1 safetybot for useage of cats
+19:26 [will_i_was contemplates leaving coolkidsusa and never coming
+                  back.]
+19:26 <cujojp> -1 mkap for accepting cats
+19:26 <DunksALot> There is more where that comes from.  Try again.
+19:26 <cujojp> help safetybot
+19:26 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/cashcat-guns.jpg
+19:26 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/cashcat-money-pile.jpg
+19:26 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/cashcat-passport.jpg
+19:26 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/cashcat-jail.jpg
+19:26 <mkap> hey they aren't just any old cats
+19:26 <mkap> these are cash cats
+19:26 <cujojp> help safetybot
+19:26 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/cashcat-guns.jpg
+19:26 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/cashcat-money-pile.jpg
+19:26 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/cashcat-passport.jpg
+19:26 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/cashcat-jail.jpg
+19:26 <will_i_was> -1 DunksALot for making me see more of them.
+19:26 <mkap> big difference
+19:26 <DunksALot> hahaha
+19:27 <DunksALot> help safetybot
+19:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/puppy-hamburger.jpg
+19:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/puppy-wrap.jpg
+19:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/puppy-sandwich.jpg
+19:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/puppy-hotdog.jpg
+19:27 <will_i_was> yep, cash cats > normal cats
+19:27 <will_i_was> but stil.. cash cats == cats
+19:27 <DunksALot> damn, where are the corgis
+19:27 <mkap> lol cashcat jail has no cash
+19:27 <cujojp> dogs > cats
+19:27 <cujojp> help safetybot
+19:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/cashcat-guns.jpg
+19:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/cashcat-money-pile.jpg
+19:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/cashcat-passport.jpg
+19:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/cashcat-jail.jpg
+19:27 <cujojp> help safetybot!!!
+19:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/puppy-hamburger.jpg
+19:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/puppy-wrap.jpg
+19:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/puppy-sandwich.jpg
+19:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/puppy-hotdog.jpg
+19:27 <cujojp> WTF DunksALot!
+19:27 <will_i_was> +10 DunksALot for adding corgis
+19:27 <will_i_was> that 10 pts was given in trust that they do
+                   exist.
+19:27 <DunksALot> I swear there are corgis.  Random numbers are
+                  being dumb
+19:27 [will_i_was believes in DunksALot.]
+19:27 <cujojp> help safetybot
+19:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/puppy-hamburger.jpg
+19:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/puppy-wrap.jpg
+19:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/puppy-sandwich.jpg
+19:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/puppy-hotdog.jpg
+19:27 <cujojp> help safetybot
+19:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/corgi-in-space.jpg
+19:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/corgi-in-swing.jpg
+19:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/corgi-on-boat.jpg
+19:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/corgi-surfing.jpg
+19:27 <cujojp> YEA!!!
+19:27 <DunksALot> Yesss!!!!
+19:27 <will_i_was> +10 DunksALot
+19:27 <cujojp> now get rid oft he cats
+19:28 <cujojp> or else...
+19:28 <griswold> dogs just add more maintenance to life
+19:28 <cujojp> -1 griswold
+19:28 <cujojp> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/corgi-surfing.jpg
+19:28 <cujojp> cats cant do that!
+19:28 <DunksALot> haha
+19:29 <mkap> lol
+19:29 <mkap> +1 cujojp
+19:29 <cujojp> camsnap corgi fun gif
+19:29 <bingbot> http://24.media.tumblr.com/tumblr_m2cckevXxy1qm1qiwo1_250.gif
+19:29 <cujojp> or that!
+19:29 <cujojp> camsnap corgi playing gif
+19:29 <bingbot> http://stream1.gifsoup.com/view6/2249732/corgi-o.gif
+19:29 <cujojp> camsnap corgi playing gif
+19:29 <bingbot> http://stream1.gifsoup.com/view6/2249732/corgi-o.gif
+19:29 <gramps> ha, pretty big attempt to hide that camsnap girls on
+               film
+19:29 <bingbot> http://www.thevehiclist.com/wp-content/uploads/2012/10/girls-on-film.jpg
+19:29 <cujojp> WOAH
+19:29 <cujojp> DO NOT CLICK THAT
+19:29 <gramps> ha, aww. click on that!
+19:30 <cujojp> sacrifice gramps
+19:30 *** quezacotl KICK gramps #coolkidsusa (｡◕‿◕｡) BYE! (｡◕‿◕｡)
+19:30 *** gramps JOIN
+19:30 <mkap> camsnap rampant tits
+19:30 <bingbot> http://www.rampantscotland.com/colour/graphics/long_tailed_tit03186a.jpg
+19:30 <gramps> back with a vengeance
+19:30 <cujojp> -100 gramps what ive seen can never be seen again
+19:30 <cujojp> :(
+19:30 <cujojp> camsnap flower gif
+19:30 <bingbot> http://static.tumblr.com/kqo0hkf/xVDm9gckh/flower_gif_594x600.jpg
+19:30 <cujojp> camsnap flower
+19:30 <bingbot> http://upload.wikimedia.org/wikipedia/commons/d/d3/Nelumno_nucifera_open_flower_-_botanic_garden_adelaide2.jpg
+19:30 <cujojp> camsnap flower pretty gif
+19:30 <bingbot> http://www.gifstop.com/images/flowers/flower12.gif
+19:30 <cujojp> camsnap flower pretty
+19:30 <gramps> really, can't handle a real skinny babe
+19:30 <bingbot> http://cva.stanford.edu/people/davidbbs/photos/nature/slides/IMG_1122%2520orange%2520flower%2520pretty%2520artsy.JPG
+19:31 <cujojp> sacrifice gramps
+19:31 *** quezacotl KICK gramps #coolkidsusa (｡◕‿◕｡) BYE! (｡◕‿◕｡)
+19:31 <cujojp> lol
+19:31 *** gramps JOIN
+19:31 <cujojp> I think its because of the size of my chrome window
+               and the size of the image
+19:31 <cujojp> was a perfect fit
+19:31 <gramps> well that makes more sense
+19:32 <cujojp> camsnap girls on film
+19:32 <bingbot> http://www.mcgowanimages.com/blog/wp-content/uploads/2012/09/McGBlogSneak_GirlsOnFilm_GetOutside_2012_2.jpg
+19:32 <cujojp> haha
+19:32 <cujojp> fuk
+19:32 <gramps> haha
+19:32 <gramps> woo
+19:32 <cujojp> campsnap
+19:32 <bingbot> http://www.campcheerio.org/trad/images/female-camp-counselors-big.jpg
+19:32 <cujojp> :/
+19:32 <cujojp> campsnap
+19:32 <bingbot> http://pbskids.org/itsmylife/images/summercamp2a.gif
+19:32 <cujojp> campsnap
+19:32 <bingbot> http://pbskids.org/itsmylife/images/summercamp2a.gif
+19:32 <cujojp> campsnap
+19:32 <bingbot> http://www.greatcampjobs.com/images/inside/photo_general.jpg
+19:32 <cujojp> ugh
+19:32 <cujojp> sacrifice bingbot
+19:32 <bingbot> sacrifice cujojp
+19:32 *** quezacotl KICK bingbot #coolkidsusa (｡◕‿◕｡) BYE! (｡◕‿◕｡)
+19:32 *** bingbot JOIN
+19:32 *** quezacotl KICK cujojp #coolkidsusa (｡◕‿◕｡) BYE! (｡◕‿◕｡)
+19:32 *** cujojp JOIN
+19:33 [griswold audited chat wall and clicked the sketchy link]
+19:34 [cujojp hopes chadwick sees griswold clicking link]
+19:35 <cujojp> :( so hungry but can't eat anything due to dentist
+               appointment.
+19:35 <cujojp> fuk the dentist
+19:35 <cujojp> camsnap dentist milf
+19:35 <bingbot> http://i.perezhilton.com/wp-content/uploads/2012/06/jenny-mccarthy-nude-dentist__oPt.jpg
+19:37 <cujojp> camsnap dentists and milf
+19:37 <bingbot> http://thedailyshow.mtvnimages.com/images/shows/tds/videos/season_11/episode_155/ds_11155_06_crt_v4.jpg%3Fwidth%3D133%26height%3D71%26quality%3D0.91%26crop%3Dtrue
+19:37 <cujojp> camsnap dentists and milf
+19:37 <bingbot> https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-ash3/p480x480/563704_606591619368916_44178552_n.jpg
+19:39 <mkap> lol
+19:39 <mkap> http://i.imgur.com/yxRNqUO.gif
+19:39 <mkap> ping griswold
+19:39 <cujojp> hahahha
+19:39 <griswold> cujojp: I usually eat before the dentist... fuk em
+19:39 <griswold> They'll clean your grill bro
+19:40 <griswold> chime mkap
+19:40 <mkap> ding
+19:40 [griswold hears a chink]
+19:41 <cujojp> camsnap chink milf
+19:41 <bingbot> https://si0.twimg.com/profile_images/3614472816/859efe6e5a100119fa963995a17746ae_normal.jpeg
+19:41 <cujojp> camsnap headless chink milf
+19:41 <bingbot> http://images1.wikia.nocookie.net/__cb20110228022918/fantasyuniversity/images/thumb/5/5a/Ancient_grease.png/150px-Ancient_grease.png
+19:42 <mr_luc> heh sweet ... yeah guys, nicks are solved
+19:42 <cujojp> homies
+19:45 <hswe> do tell
+19:45 <hswe> I am excite
+19:46 *** derpo JOIN
+19:46 <mr_luc> homies?
+19:46 <derpo> derpo cujojp bingbot gramps safetybot mr_luc mkap
+              DunksALot scorpio encrypt3d_wound will_i_was
+              quezacotl griswold |h9| hswe pema dogshitbot
+              crash0verride ChanServ
+19:46 <bingbot> derpo cujojp derpo gramps safetybot mr_luc mkap
+                DunksALot scorpio encrypt3d_wound will_i_was
+                quezacotl griswold |h9| hswe pema dogshitbot
+                crash0verride ChanServ
+19:46 <mr_luc> yeah boyeeee
+19:48 <mr_luc> https://github.com/mrluc/node-dbp-irctweet/commit/031de449afd59bdfb99b8b8e9beaf7f74d4605ea
+19:49 <encrypt3d_wound> sacrifice homies?
+19:49 <encrypt3d_wound> homies?
+19:49 <derpo> derpo cujojp bingbot gramps safetybot mr_luc mkap
+              DunksALot scorpio encrypt3d_wound will_i_was
+              quezacotl griswold |h9| hswe pema dogshitbot
+              crash0verride ChanServ
+19:49 <bingbot> derpo cujojp derpo gramps safetybot mr_luc mkap
+                DunksALot scorpio encrypt3d_wound will_i_was
+                quezacotl griswold |h9| hswe pema dogshitbot
+                crash0verride ChanServ
+19:49 <encrypt3d_wound> looks like bingbot implemented that
+                        functionality too!
+19:49 <bingbot> looks like encrypt3d_wound implemented that
+                functionality too!
+19:49 <encrypt3d_wound> +1 mr_luc
+19:50 <will_i_was> :/
+19:52 <griswold> camsnap dog shit bot
+19:52 <bingbot> http://farm1.staticflickr.com/33/100606237_7667500e26_z.jpg%3Fzz%3D1
+19:52 <griswold> camsnap dog shit bot
+19:52 <bingbot> http://upload.wikimedia.org/wikipedia/commons/4/42/Funny_sign_for_dog_shit_prevention_in_Switzerland.jpg
+19:52 <DunksALot> Seriously, what is dogshitbot?
+19:52 <mr_luc> I'll get rid of that homies command, but the
+               important thing is that you can write @get_nicks =>
+               @nicks #uses fresh nicks, without spamming chan.
+19:53 <encrypt3d_wound> +1 mr_luc for sharing code w/ the community
+                        in an open source way
+19:53 <encrypt3d_wound> -1 mr_luc for removing a bot command
+19:53 <mr_luc> ... 'important' only in the loosest sense of the
+               word ...
+19:55 <encrypt3d_wound> bots are of the utmost importance
+19:55 <encrypt3d_wound> they allow #smartDevs to work faster
+19:57 <mkap> dogshitbot is of vital importance
+19:57 <mr_luc> I honestly have wished I had a text-based "what
+               about x" when on spotty connections .. I don't need
+               the whole gd google homepage.
+19:57 <encrypt3d_wound> he obviously exists
+19:58 <mkap> he wouldn't exist without a good reason
+19:58 <mkap> that just doesn't make sense
+19:58 <encrypt3d_wound> ^^ truthful proof
+19:59 <gramps> tides go out. tides come in.
+20:00 <mr_luc> billo
+20:01 <mr_luc> has everyone else gone totally around on billo? I
+               love that guy now.
+20:01 <mr_luc> He's got his schtick, he shticks to it.
+20:01 <mr_luc> what's a schtick?
+20:01 <derpo> [Shtick - Wikipedia, the free encyclopedia] A shtick
+              (Yiddish: שטיק) (or schtick) is a comic theme or
+              gimmick. "Shtick" is derived from the Yiddish word
+              shtik (שטיק), meaning "piece"; the closely
+              related ... http://en.wikipedia.org/wiki/Shtick
+20:02 <mr_luc> oy, vey.
+20:02 <mr_luc> I can listen to him for 3 minutes without yelling
+               @tv now.
+20:03 <cujojp> homies
+20:03 <mkap> he's wrong about a lot of stuff, but i have more
+             respect for him than anyone else on foxnews
+20:03 <cujojp> :(
+20:03 <cujojp> homies?
+20:03 <derpo> derpo cujojp bingbot gramps safetybot mr_luc mkap
+              DunksALot scorpio encrypt3d_wound will_i_was
+              quezacotl griswold |h9| hswe pema dogshitbot
+              crash0verride ChanServ
+20:03 <bingbot> derpo cujojp derpo gramps safetybot mr_luc mkap
+                DunksALot scorpio encrypt3d_wound will_i_was
+                quezacotl griswold |h9| hswe pema dogshitbot
+                crash0verride ChanServ
+20:03 <cujojp> YEA
+20:03 <cujojp> +1 mr_luc
+20:03 <mkap> which is damning with faint praise, but there you have
+             it
+20:03 <mkap> i like it when he goes on the daily show
+20:04 <encrypt3d_wound> TIL this works in js:  ლಠ益ಠლ = 'asdf'
+20:04 <cujojp> who is billo
+20:04 <derpo> [Billo Fr�meta - Wikipedia, the free encyclopedia]
+              Billo Fr�meta (b. November 15, 1915 in Santo Domingo,
+              Dominican Republic - Caracas May 5, 1988) was a
+              Dominican Republic orchestra conductor, arranger
+               ... http://en.wikipedia.org/wiki/Billo_Fr%C3%B3meta
+20:04 <cujojp> HES DEAD!
+20:07 <cujojp> lotterytime
+20:07 <quezacotl> It's lottery time!
+20:07 *** quezacotl KICK safetybot #coolkidsusa Jackpot! ( ˘ ³˘)♥
+20:07 *** safetybot JOIN
+20:08 <cujojp> -1 me eating before dentist appointment
+20:08 <cujojp> -1 me taking griswold's advice
+20:09 <griswold> They won't care
+20:09 <griswold> Is it a cleaning?
+20:09 <cujojp> crown
+20:10 <griswold> They'll just clean off any food that might be an
+                 inconvenience. It's their job.
+20:10 <griswold> +1 cujojp for taking insignificant risk in dental
+                 venture
+20:11 <griswold> +1 cujojp for crowning old wound
+20:11 <cujojp> https://www.youtube.com/watch?v=L1kOu5kG-lk
+20:11 <griswold> lol, I already cracked up
+20:12 <cujojp> Kanye what﻿ type of fruit is purple? That shit grape.
+20:12 <cujojp> "This is why you shouldn't have let him get in his﻿
+               zone..." ping encrypt3d_wound
+20:12 <cujojp> haha
+20:13 <cujojp> oh man my buddy is trying to convince me that him
+               going to meetings all day in improving his chances
+               of getting promoted
+20:13 <cujojp> #agencylife
+20:14 <cujojp> chime pema, your opinion of meetings all day?
+20:14 <encrypt3d_wound> imagine having to do that w/o a laptop
+20:14 <encrypt3d_wound> but everyone else had one
+20:15 <cujojp> haha
+20:15 <cujojp> i think he goes without a laptop.
+20:15 <cujojp> poor guy
+20:16 [encrypt3d_wound rubs pemas shoulders]
+20:16 [encrypt3d_wound rubs fresh grease into his spiky blonde
+                       tips]
+20:16 <gramps> encrypt3d_wound rubs pemas boulders
+20:16 [cujojp aroused ]
+20:16 [encrypt3d_wound nastybates]
+20:16 [cujojp saves irc transcript for #afterhours ]
+20:17 [encrypt3d_wound waxes the rat]
+20:17 [cujojp emails jon_resig ]
+20:17 <encrypt3d_wound> haha
+20:17 <encrypt3d_wound> Subject: Fwd: Turn on your webcam NOW
+20:17 <cujojp> hahahahah
+20:17 <gramps> camsnap encrypt3d_wound pumps a milf
+20:17 <bingbot> soRry bro!  bing must be down
+20:18 <encrypt3d_wound> camsnap pumped milf
+20:18 <bingbot> http://1.bp.blogspot.com/-_IbfC6Zi2Ac/UJ0Ixz0zVMI/AAAAAAAAGOI/X1smGg_2fyA/s1600/winone.jpg
+20:18 <cujojp> i think if i EVER met him, I couldn't take him
+               seriously.
+20:18 <cujojp> without thinking hes some creepy horn dog
+20:18 <mkap> camsnap horn dog bags a milf
+20:18 <bingbot> http://3.bp.blogspot.com/-XdCg2f6kHUc/USI_e0tw00I/AAAAAAAAZ8Y/kMt-zx8BCWM/s1600/Illamasqua%2BMILF%2B4.jpg
+20:19 <gramps> camsnap milf bags a corndog
+20:19 <bingbot> http://i.perezhilton.com/wp-content/uploads/2012/07/bacon-corn-dog__oPt.jpg
+20:19 <cujojp> Jon: "Hey I'm Jon, nice to meet yo...."
+20:19 <cujojp> Me: "GET THE FUCK AWAY FROM ME!.. YOU… PERV!"
+20:19 <encrypt3d_wound> 'I'm the creator of the following 5k+ user
+                        sub-reddits: sex, news, boston, javascript,
+                        travel, coding, photos, opensource,
+                        religion, google, haskell, firefox, mac,
+                        and europe.'
+20:20 <cujojp> hahahaha
+20:20 <cujojp> i wish it was more buried in the list
+20:20 <gramps> camsnap i am the creator of sex
+20:20 <bingbot> http://img.gawkerassets.com/img/18k3jd8uxf9vdjpg/ku-xlarge.jpg
+20:21 <cujojp> http://f.cl.ly/items/3i263i2q1M333O031q3n/Screen%20Shot%202013-06-19%20at%201.20.45%20PM.png
+20:21 <cujojp> wut
+20:21 <gramps> oh those japanese
+20:22 <cujojp> camsnap japanese
+20:22 <bingbot> http://upload.wikimedia.org/wikipedia/commons/0/06/War_flag_of_the_Imperial_Japanese_Army.svg
+20:22 <encrypt3d_wound> camsnap TORO TORO TORO
+20:22 <bingbot> http://www.rutaverdebolivia.com/torotoro/torotoro1.jpg
+20:22 <cujojp> camsnap オッパイ
+20:22 <bingbot> soRry bro!  bing must be down
+20:22 <cujojp> camsnap オッパイ
+20:22 <bingbot> soRry bro!  bing must be down
+20:22 <cujojp> fuk
+20:22 <cujojp> lol
+20:22 <gramps> camsnap but i typed it in asian!
+20:22 <bingbot> http://deathnoodleblog.files.wordpress.com/2013/05/img_1510.jpg
+20:23 <cujojp> camsnap oppai
+20:23 <bingbot> http://gallery.fanserviceftw.com/_images/1f7eb2096191582ada63d1b2e756484d/1443%2520-%2520mega_milk%2520oppai%2520science%2520supermassive.jpg
+20:23 <cujojp> haha
+20:23 <mkap> camsnap TOTORO TOTORO TOTORO
+20:23 <bingbot> http://static.zerochan.net/Totoro.full.980007.jpg
+20:23 <gramps> ha, +1 cujojp
+20:23 <cujojp> camsnap oppai wo kimochi
+20:23 <bingbot> http://otakixus.net/blog/wp-content/uploads/2011/06/kimochi_project_banner_v21.png
+20:24 <gramps> camsnap biscuit tin
+20:24 <bingbot> http://www.probertencyclopaedia.com/photolib/food/Biscuit%2520Tin%25202.jpg
+20:24 <cujojp> camsnap tomodachi no oppai wo kimochi
+20:24 <bingbot> http://th00.deviantart.net/fs71/PRE/i/2012/031/1/c/raku_chunk_by_puddingplushiepalace-d4oaceq.jpg
+20:24 <cujojp> haha
+20:24 <cujojp> camsnap tomodachi no oppai wo kimochi desu ne
+20:24 <bingbot> http://img.docstoccdn.com/thumb/orig/48233034.png
+20:24 <cujojp> fuk
+20:24 <cujojp> wait
+20:25 <cujojp> hm that sentence makes no sense
+20:25 <cujojp> we'll get a NSFW image soon enough
+20:25 <cujojp> :)
+20:25 <gramps> camsnap not for work
+20:25 <bingbot> http://www.esquire.com/cm/cosmogirl/images/UA/esq-sandals-0410-lg.jpg
+20:26 <gramps> camsnap probably inappropriate
+20:26 <bingbot> http://www.dianehenders.com/images/v01_probably_inappropriate.jpg
+20:26 <cujojp> camsnap watashi no tomodachi no oppai ga kimochi
+               desu ne
+20:26 <bingbot> http://i2.ytimg.com/i/9VXEsG6eYMphyYUcFqTelA/mq1.jpg%3Fv%3D51351e74
+20:26 <gramps> camsnap teetering on the edge of nudity
+20:26 <cujojp> camsnap watashi no tomodachi no oppai ga kimochi
+               desu ne
+20:26 <bingbot> http://i2.ytimg.com/i/9VXEsG6eYMphyYUcFqTelA/mq1.jpg%3Fv%3D51351e74
+20:26 <bingbot> http://blog.silive.com/entertainment_impact_arts/2008/10/medium_10-23visuals.jpg
+20:26 <encrypt3d_wound> da concert
+                        http://www.sigur-ros.co.uk/kveikurlive360/
+20:26 <cujojp> wtf
+20:26 <cujojp> camsnap watashi no tomodachi no oppai ga kimochi
+               desu!
+20:26 <bingbot> http://3.bp.blogspot.com/-__ThAQ6OaNc/UNwmUN8Y2kI/AAAAAAAAAT0/ohCJ-swenrs/s1600/46.png
+20:27 [cujojp gives up]
+20:27 <gramps> camsnap girls near film
+20:27 <cujojp> "my friends titties feel nice"
+20:27 <bingbot> http://www.soulbounce.com/soul/assets_c/2010/10/for-colored-girls-soundtrac-thumb-473xauto-7161.jpg
+20:27 <mkap> camsnap my friends titties feel nice
+20:27 <bingbot> http://i.realself.com/full/2656e30646ec29ecda234e5514cb6537/583946-687757.JPG
+20:27 <cujojp> hahahaahahah
+20:27 <mkap> lol see that wasn't hard
+20:27 <cujojp> help safetybot
+20:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/corgi-in-space.jpg
+20:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/corgi-in-swing.jpg
+20:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/corgi-on-boat.jpg
+20:27 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/corgi-surfing.jpg
+20:27 <cujojp> YEA
+20:27 <gramps> yeah corgi on boat!
+20:27 <cujojp> you would think the japanese one would be way  worse
+20:28 <mkap> yeah in pretty much every case
+20:28 <gramps> camsnap disappointing japanese
+20:28 <bingbot> http://s1.ibtimes.com/sites/www.ibtimes.com/files/styles/v2_article_large/public/2011/12/21/208313-a-man-is-reflected-onstock-quotation-board.jpg
+20:28 <cujojp> camsnap oppai
+20:28 <bingbot> http://www.mobygames.com/images/shots/l/238097-oppai-slider-2-windows-screenshot-close-up-as-much-as-you.jpg
+20:28 <cujojp> hahahaha
+20:28 <gramps> there ya go
+20:28 <cujojp> help safetybot!
+20:28 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/corgi-in-space.jpg
+20:28 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/corgi-in-swing.jpg
+20:28 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/corgi-on-boat.jpg
+20:28 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/corgi-surfing.jpg
+20:28 <cujojp> help safetybot!
+20:28 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/corgi-in-space.jpg
+20:28 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/corgi-in-swing.jpg
+20:28 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/corgi-on-boat.jpg
+20:28 <safetybot> https://raw.github.com/tjdunklee/irc-bots/master/safety-images/corgi-surfing.jpg
+20:29 <DunksALot> Corgis like crazy!
+20:29 <cujojp> +1 DunksALot
+20:30 <mkap> camsnap milf dunks a lot
+20:30 <bingbot> http://i2.ytimg.com/vi/qwOESVHpLkM/default.jpg
+20:30 <mkap> :|
+20:31 <cujojp> http://www.okayplayer.com/news/kanye-west-yeezus-review-by-big-ghost.html
+20:31 <gramps> Crack Cocaine Biceps
+20:32 <mkap> camsnap crack cocaine biceps
+20:32 <bingbot> http://moonbattery.com/crack-cocaine.jpg
+20:32 <encrypt3d_wound> camsnap buff milf
+20:32 <bingbot> http://secretcigarsociety.home.comcast.net/~secretcigarsociety/vix/mk02.jpg
+20:32 <encrypt3d_wound> lol
+20:32 <mkap> lol
+20:32 <encrypt3d_wound> on a nsfw streak
+20:32 <mkap> cigarvixens.com
+20:33 <encrypt3d_wound> hahaha
+20:33 <mkap> sounds hot
+20:33 <gramps> camsnap bill clinton's favorite site
+20:33 <bingbot> http://www.biography.com/imported/images/Biography/Images/Profiles/C/Bill-Clinton-9251236-1-402.jpg
+20:33 <encrypt3d_wound> camsnap bats everywhere
+20:33 <bingbot> http://24.media.tumblr.com/tumblr_mdilmixMqi1rrsjf4o1_500.jpg
+20:33 <mkap> camsnap bill clinton that dirty bastard
+20:33 <bingbot> http://images4.mtv.com/uri/mgid:uma:content:mtv.com:1429473%3Fwidth%3D281%26height%3D211
+20:33 <encrypt3d_wound> camsnap dirt
+20:33 <bingbot> http://www.vickerydirt.com/material-pics/fill-dirt.jpg
+20:33 <mkap> camsnap don't stop here this is bat country
+20:33 <bingbot> http://1.bp.blogspot.com/_i7IqN0dMk7g/TBLzK7SF8PI/AAAAAAAAEhE/HR-hguJGx0w/s1600/FearAndLoathing004.jpg
+20:33 <DunksALot> camsnap bill clinton sax on the beach
+20:33 <bingbot> http://political-party.losito.net/images/clinton-sax.jpg
+20:34 <mkap> camsnap bill clinton at mcdonalds
+20:34 <bingbot> http://static.tumblr.com/1802f72f35f6974aa832e7d3ab3d75fc/he7lypc/gSYmiayzm/tumblr_static_clinton-mcdonalds.jpg
+20:34 <gramps> camsnap tobey mcguire fear and loathing
+20:34 <bingbot> http://movieactors.com/photos-stars/tobey-maguire-fearandloathing-3.jpg
+20:34 <mkap> lol
+20:34 *** griswold QUIT Read error: Connection reset by peer
+20:34 <mkap> didn't realize that was toby mcguire
+20:35 <gramps> camsnap tobey mcguire the wizard
+20:35 <bingbot> http://www.lat34.com/wp-content/uploads/2009/07/wizard-tobey.jpg
+20:35 <gramps> love me some tobey mcguire cameos
+20:36 *** griswold JOIN
+20:37 <mr_luc> homies?
+20:37 <derpo> derpo cujojp bingbot gramps mr_luc mkap DunksALot
+              scorpio encrypt3d_wound will_i_was quezacotl |h9|
+              hswe pema dogshitbot crash0verride ChanServ safetybot
+              griswold
+20:37 <bingbot> derpo cujojp derpo gramps mr_luc mkap DunksALot
+                scorpio encrypt3d_wound will_i_was quezacotl |h9|
+                hswe pema dogshitbot crash0verride ChanServ
+                safetybot griswold
+20:38 <mkap> god damn that lucas is one serious badass
+20:39 <gramps> camsnap lucas with power glove
+20:39 <bingbot> http://media.tumblr.com/tumblr_l0ie7z23Lj1qa5kxw.jpg
+20:40 <gramps> cujojp: i like this line in the kanye review "You
+               wild stupid for a genius yo."
+20:40 <cujojp> haha
+20:40 <cujojp> Big Ghost is awesome
+20:42 <pema> scumbag pm
+20:42 <pema> knows blog doesn't support comments
+20:43 <pema> writes a blog post that encourages reader comments
+20:43 <cujojp> scumbag pema
+20:43 <cujojp> makes me visit space150 blog
+20:43 <pema> assumes implementation of comments takes five minutes
+20:43 <pema> ping gramps
+20:43 <gramps> +5 pema
+20:43 <gramps> 5 minutes that is
+20:43 <DunksALot> +5 pema
+20:43 <cujojp> camsnap Jenn
+20:43 <bingbot> http://www.i-o-s.net/iwe/UserFiles/667/Image/staff%2520photos/jenn%2520k.jpg
+20:44 <gramps> but in wordpress you just push disqus and it makes
+               it
+20:44 <mr_luc> sup peemers
+20:45 <DunksALot> Can I comment with my myspace account on the
+                  space150 blog?
+20:46 <gramps> i think it only takes 5 minutes to add myspace login
+20:46 <pema> hi mr_luc
+20:46 <gramps> wordpress
+20:46 <pema> mr_luc, I'm sending you an IM on gchat
+20:47 <cujojp> its of camspanp pema's dik
+20:47 <cujojp> :O
+20:47 <cujojp> its of camsnanp pema's dik
+20:47 <cujojp> fuk
+20:47 <cujojp> -5 cujojp
+20:47 <pema> ur smrt
+20:47 <cujojp> sacrifice cujojp
+20:47 *** quezacotl KICK cujojp #coolkidsusa (｡◕‿◕｡) BYE! (｡◕‿◕｡)
+20:48 *** cujojp JOIN
+20:48 <pema> +1 cujojp for ability to spell (or lack thereof,
+             amirite?)
+20:48 <cujojp> HAH YAH!
+20:48 <cujojp> that guy suxxxx
+20:48 <pema> PIZZA!
+20:48 <gramps> hey cujojp http://codepen.io/duboisnicolas/pen/fhkqv
+20:48 <pema> camsnap pizza
+20:48 <will_i_was> http://ami.responsivedesign.is/?url=http%3A%2F%2Fcujojp.com
+20:48 <bingbot> http://sw-sn.org/lombardispizzeria/wp-content/uploads/2013/01/Pizza-Hut-pepperoni-pan-pizza-original.jpg
+20:48 <pema> mmmnm
+20:48 <gramps> looks damn tasty
+20:48 <cujojp> +5 gramps
+20:48 <mr_luc> feature request: helpful spell checking for camsnap?
+20:49 <cujojp> camsnap pema's dik
+20:49 <bingbot> http://talkingpointsmemo.com/assets_c/2013/02/dick-morris-AP100912135298-cropped-proto-custom_28.jpg
+20:49 <cujojp> :O
+20:49 <DunksALot> wow, I had no idea
+20:49 <cujojp> camsnap pema's dik
+20:49 <bingbot> http://talkingpointsmemo.com/assets_c/2013/02/dick-morris-AP100912135298-cropped-proto-custom_28.jpg
+20:49 <cujojp> camsnap pema's dik
+20:49 <bingbot> http://www.nzbwereld.org/%3Fpage%3Dgetimage%26messageid%3Dx3URnp4ep6wtWHLTg4hLz%2540spot.net%26image%255Bheight%255D%3D260%26image%255Bwidth%255D%3D260
+20:49 <cujojp> hmmmm
+20:49 <cujojp> where is the babe at
+20:49 <derpo> It's here:
+              http://maps.googleapis.com/maps/api/staticmap?center=the%20babe%20at&zoom=11&size=500x400&sensor=false&.jpg
+20:49 <cujojp> +1 derpo
+20:50 <cujojp> whats the score?
+20:50 <scorpio> dubs has 1000000 points, gramps has -92 points,
+                COLORADO_MILF_COUGAR_MATURE_HUNTING_PERMIT_STICKER_DECAL
+                has 1 points, griswold has -86 points, bingbot has
+                420 points, points, has -170 points, quezacotl has
+                2 points, derpo has 2 points, mr_luc has 3 points,
+                will_i_was has 1 points,
+                http://i.imgur.com/xHo6CaJ.gif has 1 points,
+                safetybot has -1 points, mkap has -1 points,
+                DunksALot has 20 points, me has -2 points, pema has
+                10 po
+20:50 <bingbot> dubs has 1000000 points, gramps has -92 points,
+                COLORADO_MILF_COUGAR_MATURE_HUNTING_PERMIT_STICKER_DECAL
+                has 1 points, griswold has -86 points, scorpio has
+                420 points, points, has -170 points, quezacotl has
+                2 points, derpo has 2 points, mr_luc has 3 points,
+                will_i_was has 1 points,
+                http://i.imgur.com/xHo6CaJ.gif has 1 points,
+                safetybot has -1 points, mkap has -1 points,
+                DunksALot has 20 points, me has -2 points, pema has
+                10 po
+20:50 <gramps> camsnap where the babes at
+20:50 <bingbot> http://graphics8.nytimes.com/images/2007/06/24/fashion/24craft600.1.jpg
+20:50 <cujojp> http://images.wikia.com/glee/images/b/b8/Eye-roll-santana-glee.gif
+20:50 <gramps> camsnap hot eyeroll
+20:50 <bingbot> http://tvrecappersanonymous.files.wordpress.com/2012/01/3-12-klaus-eyeroll.png%3Fw%3D500%26h%3D281
+20:52 <pema> http://www.youtube.com/watch?v=9yfu9egNOdA
+20:52 <pema> hey cujojp
+20:52 <pema> that video might get you some san fran action
+20:52 <pema> camsnap san fran action
+20:52 <bingbot> http://static4.businessinsider.com/image/4f5b8f8deab8ea440700005b/how-electronic-arts-destroyed-san-francisco-in-its-live-action-ad-for-mass-effect-3.jpg
+20:52 <cujojp> +1 pema
+20:52 <pema> WHOA
+20:52 <pema> live feed!
+20:52 <cujojp> LO
+20:52 <will_i_was> http://www.theonion.com/articles/10-sexiest-photos-of-kates-uptons,32801/
+20:52 <cujojp> :O
+20:52 <cujojp> WTF
+20:53 <will_i_was> +1 the-onion
+20:53 <will_i_was> "People call him Upton. Or maybe they don’t. Hot
+                   pic, though."
+20:54 <cujojp> B.J. Upton: Oh. My. God.
+20:54 <cujojp> +1 will_i_was for link
+20:54 <cujojp> +1 the-onion
+20:54 <pema> lol
+20:54 <pema> http://o.onionstatic.com/images/22/22407/16x9/750.jpg?4446
+20:54 <will_i_was> pema: your new profile pic
+20:55 <cujojp> encrypt3d_wound ->
+               https://devcenter.heroku.com/articles/dynos#dyno_restarts
+20:55 <will_i_was> Hey cujojp can you have ☃ as a username on rdio?
+                   http://labs.spotify.com/2013/06/18/creative-usernames/
+20:55 <cujojp> :( they do restart once a day
+20:55 <cujojp> unsure will_i_was
+20:55 <cujojp> seems like opening the flood gates
+20:57 *** scorpio QUIT Remote host closed the connection
+20:57 <cujojp> hmmm
+20:58 *** scorpio JOIN
+20:58 <cujojp> WTF get out of here scorpio
+20:58 *** scorpio QUIT Remote host closed the connection
+20:58 <mr_luc> whaaat character is that??
+20:58 *** scorpio JOIN
+20:59 <cujojp> scorpio has a mmind of his own?
+20:59 <cujojp> camsnap skynet
+20:59 <bingbot> http://www.socialtechpop.com/wp-content/uploads/2011/04/skynet-britanico.jpg
+20:59 *** scorpio QUIT Remote host closed the connection
+21:00 *** scorpio JOIN
+21:00 <cujojp> lol oh man
+21:00 <cujojp> what have we done!
+21:00 *** scorpio QUIT Remote host closed the connection
+21:00 <cujojp> ok its dead
+21:00 <cujojp> whew
+21:01 <cujojp> -1 cujojp
+21:01 <encrypt3d_wound> 'Dynos are also cycled at least once per
+                        day, in addition to being restarted as
+                        needed for the overall health of the system
+                        and your app.'
+21:01 <cujojp> yep
+21:01 <cujojp> going to ad the cloud-db
+21:01 <cujojp> :O
+21:01 <encrypt3d_wound> cool!
+21:01 <cujojp> aka. a text file
+21:01 <cujojp> :)
+21:01 <encrypt3d_wound> haha whaat
+21:01 <mr_luc> ...
+21:01 <cujojp> ok fine
+21:01 <encrypt3d_wound> where would the text file live?
+21:02 <cujojp> da cloud
+21:02 <cujojp> :]
+21:02 <encrypt3d_wound> haha
+21:02 <mr_luc> you tell him
+21:02 <encrypt3d_wound> sounds like you got most of the solution
+                        figured out
+21:02 <cujojp> +1 me
+21:02 <cujojp> nah idk yet
+21:02 <encrypt3d_wound> google docs!
+21:02 <encrypt3d_wound> ping tom
+21:02 <cujojp> YEA!
+21:02 <mr_luc> hahaha
+21:02 <mr_luc> I know you're joking but that would be the tits
+21:03 <cujojp> +1 mr_luc
+21:03 <cujojp> seems like a good idea IMO
+21:04 <mr_luc> ☃ manages to come through IRC, Emacs' irc library,
+               GNU screen, and iTerm2 unmangled
+21:05 <mr_luc> +1 unix_ecosystem
+21:05 <cujojp> camsnap Dentist Appointment in 30 mins :(
+21:05 <bingbot> http://magictravelblog.com/wp-content/uploads/2012/04/No-more-dentist-appointments.jpg
+21:05 <cujojp> fuk
+21:08 <mr_luc> Wait ... is this devops?
+               http://tech.pro/tutorial/1335/devops-for-dummies-vps-configuration-from-scratch-rails-nginx-postgresql
+21:09 <mr_luc> I mean ... am I a hardcore devops guy then? :P I
+               called this kind of stuff "unix-fu", and I'm not
+               even particularly good at it
+21:09 <griswold> camsnap milf with crown
+21:09 <bingbot> http://postmovie.files.wordpress.com/2010/10/rockyhorrorcover-pola1.jpg%3Fw%3D595
+21:09 <griswold> camsnap milf with crown
+21:09 <bingbot> http://www.mapquestapi.com/staticmap/v3/getmap%3Fkey%3DGmjtd%257Cluua2hu2nq%252C8g%253Do5-lz8lq%26type%3Dmap%26size%3D300,184%26pois%3Dblue_1-1,41.41734284084231,-87.36546403824062%257Cblue_1-2,41.4330991802084,-87.3636305732962%257Cblue_1-3,41.48489456488823,-87.39571620982352%257Cblue_1-4,41.50082279159287,-87.46710675109684%257Cblue_1-5,41.5315906251914,-87.25425293020574%257Cblue_1-6,41.56642645913534,-87.40327925271924%257Cblue_1-7,41.567228600
+21:09 <bingbot> .41714483136141
+21:09 <griswold> camsnap milf with crown
+21:09 <bingbot> http://postmovie.files.wordpress.com/2010/10/rockyhorrorcover-pola1.jpg%3Fw%3D595
+21:09 <crash0verride> http://i.imgur.com/WEQCyko.jpg
+21:09 <mr_luc> and I assumed that, like, Puppet was real 'devops'
+21:10 <crash0verride> mr_luc: looks like all ops and no dev
+21:10 <crash0verride> puppet&chef prob closer to real 'devops'
+21:11 <crash0verride> devops for dummies.. how to setup apache lol
+21:11 <cujojp> ping griswold camsnap headless milf
+21:11 <bingbot> http://www.myconfinedspace.com/wp-content/uploads/tdomf/52895/jenna_headless2.jpg
+21:11 <cujojp> :O
+21:12 <griswold> what about erect rwanda boy
+21:12 <derpo> [Child sponsor's visit to Rwanda | ActionAid] Oct 30,
+              2012 ... In Kinyarwanda, the native language to
+              Rwanda, this means 'be ... see the community huddled
+              together under a canopy that has been erected ...
+21:12 <cujojp> cansnap big dick
+21:12 <cujojp> lol
+21:12 <griswold> camsnap cansnap
+21:12 <bingbot> http://www.extremetech.com/wp-content/uploads/2013/04/3d-depth-map-laser-kilometer-640x353.jpg
+21:12 <mr_luc> camsnap large richard
+21:12 <bingbot> http://dyn-images.hsni.com/is/image/HomeShoppingNetwork/prodzoom/richard-mishaan-handcrafted-large-citrine-votive-holder-d-20111024180809837~154626.jpg
+21:12 *** f0ster JOIN
+21:12 *** f0ster QUIT Changing host
+21:12 *** f0ster JOIN
+21:13 *** f0ster QUIT Read error: Connection reset by peer
+21:13 <cujojp> camsnap blue berry pancakes
+21:13 <bingbot> http://restaurantreviews.chefpointcafe.org/wp-content/uploads/2011/02/BlueberryPancakes.jpg
+21:13 *** f0ster JOIN
+21:14 <mr_luc> camsnap dirigible baron
+21:14 <bingbot> http://www.marvunapp.com/Appendix/bavblimp1.jpg
+21:19 <mkap> http://www.youtube.com/watch?v=YePE2tloDd4
+21:20 *** f0ster QUIT Ping timeout: 246 seconds
+21:20 <cujojp> YEA!
+21:20 <cujojp> db now working with scorpio
+21:21 <mr_luc> doesn't heroku delete anything you write to the
+               filesystem?
+21:21 <cujojp> does it?
+21:21 <cujojp> that would be lame
+21:21 *** will_i_was QUIT Remote host closed the connection
+21:21 <mr_luc> what about heroku filesystem
+21:21 <derpo> [Read-only Filesystem | Heroku Dev Center] Apr 25,
+              2013 ... Understand the read-only filesystem of the
+              Heroku Bamboo stack.
+21:21 <cujojp> Havent pushed to heroku yet
+21:21 <cujojp> :(
+21:21 <cujojp> fuk
+21:21 <mr_luc> hahaha
+21:21 <cujojp> hmmm
+21:22 <cujojp> any solutions mr_luc
+21:22 <mr_luc> well hey ... doesn't it come with a free db?
+21:22 *** will_i_was JOIN
+21:22 <mr_luc> what about heroku free sql
+21:22 <derpo> [Heroku Postgres] Heroku Postgres is a fully managed
+              database as a service. ... Dataclips are SQL queries
+              that can be run against live databases. They can be
+              ... Try For Free.
+21:22 <cujojp> oohhh
+21:22 <mr_luc> yeah a free 5mb db
+21:22 <cujojp> was using mongo
+21:22 <cujojp> +1 postgres
+21:22 <crash0verride> lol
+21:23 <mr_luc> I thought you were using text files
+21:23 <cujojp> haha i was joking
+21:23 <crash0verride> flat file ftw
+21:23 <cujojp> although a google doc would be sweet too
+21:23 <mr_luc> http://stackoverflow.com/questions/14472458/free-mongo-db-hosting-with-heroku
+21:24 *** crash0verride NICK f0ster
+21:24 *** f0ster QUIT Changing host
+21:24 *** f0ster JOIN
+21:24 <cujojp> YEA!
+21:24 <cujojp> +1 mr_luc even though these points dont count
+21:24 <f0ster> cujo is the whats the score bot yours?
+21:24 <mr_luc> it is now, right?
+21:25 <cujojp> yah encrypt3d_wound seems to have given me the
+               responsibilities :(
+21:25 *** scorpio JOIN
+21:25 <cujojp> fuk time to go to dentis
+21:25 <cujojp> *dentist
+21:26 <encrypt3d_wound> yea +1 cujojp!
+21:26 <mr_luc> hey cool ... man I need to put things in clouds more
+21:26 <mr_luc> less DEV OPS
+21:26 <encrypt3d_wound> yea its all about NO OPS these days
+21:27 <cujojp> ill get this thing on mongo when i come back
+21:27 <cujojp> +1 mongo
+21:27 <cujojp> suuper easy
+21:27 <cujojp> should store other shit too, like how many times a
+               user camsnaps to sacrifice :x
+21:27 <cujojp> -1 me for ideas
+21:27 <mr_luc> what about noops
+21:27 <derpo> [What is NoOps anyhow? � AppFog Blog] Since having
+              our infographic published on GigaOm, there has been a
+              lot of controversy and FUD around �NoOps�. Paul
+              Graham recently wrote about schlep   ...
+21:28 <mr_luc> what about no-op
+21:28 <derpo> [Noop - Wikipedia, the free encyclopedia] Noop was a
+              project from Google aiming to develop a new
+              programming language. Noop attempts to blend the best
+              features of "old" and "new" languages,   while ...
+21:28 <mr_luc> ... hmm.
+21:28 <mr_luc> hnsearch noop
+21:28 <derpo> [Google Delivers New Java-like Language, Noop |
+              Hacker News] Sep 17, 2009 ... Noop is a 20% time
+              project for the developers. So, there's a tacit
+              endorsement by Google, but it's not as if Google has
+              staffed up a full-time team ...
+              http://news.ycombinator.com/item?id=827733
+21:29 <encrypt3d_wound> hmm haven't heard of that
+21:29 <encrypt3d_wound> what about kitlin
+21:29 <derpo> [Kit Lin | Facebook] Kit Lin is on Facebook. Join
+              Facebook to connect with Kit Lin and others you may
+              know. Facebook gives people the power to share and
+              makes the world more ...
+21:29 <encrypt3d_wound> what about kotlin
+21:29 <derpo> [Kotlin] Kotlin is a statically typed programming
+              language that compiles to JVM byte codes and
+              JavaScript. Hello, world! More examples. package
+              hello fun main(args   ...
+21:30 <encrypt3d_wound> 'Noop supports dependency injection in the
+                        language, testability and immutability.'
+                        interesting
+21:30 <mkap> what about lolcode
+21:30 <derpo> [LOLCODE - Wikipedia, the free encyclopedia] LOLCODE
+              is an esoteric programming language inspired by the
+              language expressed in examples of the lolcat Internet
+              meme. The language was created in   ...
+21:31 <mr_luc> what about NOP
+21:31 <derpo> [NOP - Wikipedia, the free encyclopedia] In computer
+              science, a NOP or NOOP (short for No Operation) is an
+              assembly language instruction, sequence of computer
+              programming language statements,   ...
+21:31 <mr_luc> finally
+21:31 <encrypt3d_wound> what about tetrisLang
+21:31 <derpo> [Pang Tetris Lang | Facebook] Pang Tetris Lang is on
+              Facebook. Join Facebook to connect with Pang Tetris
+              Lang and others you may know. Facebook gives people
+              the power to share and ...
+21:31 <encrypt3d_wound> pang cujojp
+21:31 <mr_luc> whaaaaat
+21:31 <mkap> assembly is a lost art :(
+21:32 <encrypt3d_wound> assembly == NO oBJECTS == obsolete
+21:33 *** hswe QUIT Remote host closed the connection
+21:35 <mr_luc> I tried to get into assembler when I was younger ...
+               but they all have their own preprocessor languages,
+               and I'd spend most of my time fighting their macro
+               systems to try to write helpers that, at the end of
+               the day, were just making assembler look less like
+               assembler
+21:35 <mr_luc> err preprocessor syntaces
+21:35 <mr_luc> ?
+21:35 <encrypt3d_wound> 'grumpy slumdog'
+21:35 <mr_luc> what about syntaces
+21:35 <derpo> [Products - Syntace] Welcome to Syntace online. Here
+              you find all articles lined up. - By clicking on the
+              product names you will directly get to the products.
+              Prices outside Germany ...
+21:36 <mr_luc> what about plural syntax
+21:36 <derpo> [syntax - Wiktionary] syntax (plural syntaxes). A set
+              of rules that govern ... Usage notes[edit]. The joke
+              plural syntices occasionally occurs in blogs (by
+              false analogy with matrix etc.) ...
+21:36 <mr_luc> aha
+21:36 <mkap> yeah I've done a bit of assembly, i really like how
+             much control you have with it, but x86 assembly is
+             horrible and isn't going away any time soon
+21:36 <mr_luc> -1 mr_luc
+21:37 <mkap> but stuff like PICs and 6502s and z80s are fun
+21:37 <mkap> probably ARMs are decent too
+21:38 <encrypt3d_wound> LEGs aren't bad either
+21:38 <mkap> bazing
+21:38 <mr_luc> mkap: I briefly got into the atmel chips with C, at
+               a 'poll this wire every tick' kind of level
+21:38 <mkap> yeah that stuff is fun to tinker with
+21:38 <encrypt3d_wound> i was thinking bout doing this when i got
+                        some free time -
+                        http://www.nand2tetris.org/
+21:38 <mr_luc> but now there are raspberrypis
+21:38 <encrypt3d_wound> i gots an ardiuno
+21:39 <mkap> noice
+21:39 <mr_luc> encrypt3d_wound: sweet, arduinobuddies
+21:39 <mr_luc> arduinos can be so stinking tiny now
+21:39 <encrypt3d_wound> yea i was amazed how small it was
+21:39 <griswold> lotterytime!
+21:39 <quezacotl> It's lottery time!
+21:39 <mr_luc> you get the SIMD one?
+21:39 *** quezacotl KICK DunksALot #coolkidsusa Jackpot! ( ˘ ³˘)♥
+21:39 <encrypt3d_wound> its pretty fun
+21:39 *** griswold QUIT
+21:39 <mkap> arduinos have ARMs?/
+21:39 <mr_luc> wait
+21:39 <mr_luc> hah
+21:39 <encrypt3d_wound> mm i don't think so
+21:40 <encrypt3d_wound> not sure
+21:40 <mr_luc> arduinos have atmel chips
+21:40 <mr_luc> what about arduino processor
+21:40 <derpo> [Arduino - Wikipedia, the free encyclopedia] I don't
+              think Arduino would exist without Wiring and I don't
+              think Wiring would exist without Processing. And I
+              know Processing would certainly not exist without
+               ...
+21:40 *** DunksALot JOIN
+21:40 <mr_luc> what about arduino atmel
+21:40 <derpo> [Arduino - Wikipedia, the free encyclopedia] In May
+              2013, the Arduino Y�n was announced. It is based on
+              the Atmel ATmega32u4 and on the Atheros AR9331, and
+              is the first wifi product combining   Arduino ...
+21:40 <mkap> this one i'm looking at has an Atmel ARM
+21:41 <mkap> they might differ from board to board though
+21:41 <mr_luc> whaaat, I have apparently missed out on that ... I
+               remember it being Atmel AVR, not arm
+21:42 <mr_luc> encrypt3d_wound: arduino mini is the mouth-watering
+               one, just for sensor-style applications
+21:42 <mr_luc> camsnap arduino mini
+21:42 <bingbot> http://arduino.cc/de/uploads/Guide/ArduinoMiniAndNGBreadboardPhoto.jpg
+21:42 <mkap> it might just be that one that has the ARM
+21:42 <encrypt3d_wound> the thing is though, is don't you pretty
+                        much have to have it usb'd into a computer
+21:42 <mr_luc> encrypt3d_wound: nah that's just for programming and
+               power
+21:42 <encrypt3d_wound> unless you pay for wireless plugin + wall
+                        power supply converter
+21:43 <encrypt3d_wound> yea, power and communication
+21:43 <encrypt3d_wound> totes crit for lotsa interesing things
+21:43 <mr_luc> but that's why I'm loving the rpi, size of a normal
+               Arduino, but you can plug a tiny usb wifi into it
+               and it just works
+21:44 <encrypt3d_wound> hmm interesting
+21:44 <mr_luc> I never did get my arduino radio crap working that I
+               bought from ladyada
+21:44 <encrypt3d_wound> ladygaga
+21:44 <mr_luc> and it runs node
+21:44 <mkap> yeah I've been thinking of getting a pi... haven't
+             come up with a real compelling reason to get one yet
+             besides just to play with
+21:44 <encrypt3d_wound> its been fun to write a little c
+21:45 <encrypt3d_wound> its pretty basic c tho
+21:45 <mr_luc> encrypt3d_wound: arduino is C by default?
+21:45 <encrypt3d_wound> yea
+21:46 <mkap> yeah C is fun
+21:46 <encrypt3d_wound> its a special environment, theres like
+                        loop() and setup() fn's you implement and
+                        don't need to #include stuff
+21:46 <mr_luc> what about arduino language
+21:46 <derpo> [Arduino - Reference] Language Reference. Arduino
+              programs can be divided in three main parts:
+              structure, values (variables and constants), and
+              functions.
+21:48 <mr_luc> what about avr vs arduino
+21:48 <derpo> [View topic - AVR vs Arduino - Which is right for me?
+              :: AVR Freaks] Mar 18, 2010 ... I've narrowed things
+              down to either the Arduino or plain AVR, both of
+              which seem very viable. I just can't seem to make the
+              decision from there.
+21:49 <mr_luc> what about avr programmer ladyada
+21:49 <derpo> [USBtinyISP - Inexpensive USB AVR Programmer -
+              Ladyada.net] USBtinyISP AVR programmer & SPI
+              interface. Overview · F.A.Q. · Make It! ... This
+              tutorial has moved to
+              http://learn.adafruit.com/usbtinyisp. June 10, 2013
+              13:56.
+21:50 <mr_luc> ^ I put together one of those and did real basic avr
+               stuff
+21:50 <encrypt3d_wound> what about avr
+21:50 <derpo> [AVR 8-bit and 32-bit Microcontroller - Atmel
+              Corporation] Atmel AVR 8-bit and 32-bit
+              microcontrollers deliver a unique combination of
+              performance, power efficiency, and design flexibility
+              for a wide range of   applications.
+21:51 <mr_luc> oh shoot you probably have an arduin Due then
+21:51 <mr_luc> Yup, that totally went over my head, I had no idea
+               there was an ARM arduino
+21:52 <mkap> ursj yjsy
+21:52 <mkap> blah
+21:52 <mkap> yeah that's the one i was looking at
+21:53 <mr_luc> mkap: I think if you wanted to start up a vaporware
+               universe-of-things home automation kickstarter,
+               using an RPi for your home hub would probably make
+               it a lot easier
+21:53 <mkap> i agree, so much work is done considering it just runs
+             linux out of the box
+21:54 <mr_luc> I think I heard refactr is actually using Rails
+               underneath theirs?!?
+21:54 <mr_luc> what about smartthings
+21:54 <derpo> [SmartThings: Automate your home and your life]
+              SmartThings makes it easy to connect the things in
+              your physical world to the Internet. You can monitor,
+              control, automate, and have fun with them from ...
+21:54 <mr_luc> what about smartthings refactr
+21:54 <derpo> [SmartThings - Founders And Team] Prior to founding
+              SmartThings, Ben was a partner at Refactr, a
+              forerunning agile software consultancy specializing
+              in developing custom software for demanding   ...
+21:58 <encrypt3d_wound> the guy from refractr started this?
+21:59 <mr_luc> Yeah ... heh ... I mean you want to do a project
+               that uses sound? You've got it, use nix sound and a
+               pc/laptop speaker. Want to play an mp3? Easy. But
+               doing any of that with an arduino probably involves
+               a breakout board and kit.
+21:59 <mr_luc> encrypt3d_wound: yeah!
+21:59 <encrypt3d_wound> hmm i don't recognize him
+22:00 <mr_luc> skoog's bro was working at refactr when they were
+               shifting into it more heavily, from here it seems
+               like it might be bigger than their consultancy by
+               now
+22:01 <encrypt3d_wound> huh interesting
+22:02 <encrypt3d_wound> a marketing company and agile shop merge
+                        and start a cloud hardware company!?
+22:03 <mr_luc> hardware now feels like portal wars in the 90s, or
+               search ... it's as feasible to put a physical box in
+               people's houses now as it was to run a saas in 96
+               probably
+22:03 *** pema QUIT Remote host closed the connection
+22:04 <mkap> later dudes i'm out
+22:04 <mr_luc> later mkap
+22:04 <mr_luc> he's going to hack some z80
+22:04 [mr_luc is jealous]
+22:05 <mkap> lol i wish
+22:05 <mkap> cya :)
+22:10 *** |h9| QUIT Quit: Leaving.
+22:12 <mr_luc> when I had downtime on haven last december I started
+               hacking an old 2500 AT&T telephone with an RPi
+               inside; I only hooked up the matrix keypad, but I
+               had all kinds of fun ideas just from thinking "rpi
+               inside old-style telephone" ... no time to do almost
+               any of them, unfortunately.
+22:19 <mr_luc> http://farm6.staticflickr.com/5325/9089138164_aa39a84b0c_o.jpg
+22:27 *** will_i_was QUIT Remote host closed the connection
+22:39 *** mkap QUIT Ping timeout: 264 seconds
+22:49 *** will_i_was JOIN
+22:54 *** will_i_was QUIT Ping timeout: 264 seconds
+23:06 *** derpo QUIT Remote host closed the connection
+23:13 *** mr_luc NICK hams`
+23:13 *** hams` NICK mr_luc
+23:14 <mr_luc> homies?
+23:14 /namwes
+23:14 *** 421 namwes Unknown command
+23:14 /names
+23:14 *** NAMES @ChanServ @mr_luc @quezacotl bingbot cujojp
+                dogshitbot DunksALot encrypt3d_wound f0ster gramps
+                safetybot scorpio
+23:16 *** f0ster_ JOIN
+23:22 *** f0ster_ QUIT Ping timeout: 252 seconds
+23:45 <cujojp> fuk dentist
+23:57 <cujojp> sacrifice f0ster
+23:57 *** quezacotl KICK f0ster #coolkidsusa (｡◕‿◕｡) BYE! (｡◕‿◕｡)
+23:57 <cujojp> :]
+23:57 *** f0ster JOIN
+23:57 <cujojp> lol fuk
+23:57 <f0ster> sacrifice cujojp
+23:57 *** quezacotl KICK cujojp #coolkidsusa (｡◕‿◕｡) BYE! (｡◕‿◕｡)
+23:57 *** cujojp JOIN
+23:57 <f0ster> -10 cujojp
+23:58 <cujojp> west coast crimee
+23:58 <f0ster> ahha
+23:58 <f0ster> looking for motorcycles on craigslist
+23:58 <cujojp> +10 f0ster
+23:58 <cujojp> oh god
+23:58 <f0ster> getting all nasty on the ruckus makes me want a real
+               biek
+23:58 <cujojp> your like a Keith? ping unhipglint dubs
+23:58 <f0ster> ruckus sparked a fire
+23:58 <cujojp> you could pay for my dentist bill?
+23:58 <cujojp> :)
+23:59 <cujojp> just throwing the idea out there
+23:59 <f0ster> no dental insurance ?
+00:00 <cujojp> they only cover 50% on the biggies. :(
+00:02 <cujojp> camsnap tooth crown
+00:02 <bingbot> http://www.dentalcosmeticscr.com/wp-content/uploads/Dental-Crown1.jpg
+00:02 <cujojp> WTF
+00:02 <cujojp> camsnap tooth crown
+00:02 <bingbot> http://www.fwperio.com/casehistory/Restorative-Crown-Length3.jpg
+00:02 <cujojp> :(
+00:02 <cujojp> fuk
+00:03 <cujojp> camsnap healthy teeth
+00:03 <bingbot> http://www.prevention.com/pvnstatic-assets/images/298x232_article_size/beauty/298x232_LB_teeth_grtwhit_ST.jpg
+00:03 <cujojp> YEA
+> 
