@@ -17,3 +17,19 @@ class Module
     obj.included?.apply(@)
     this
 exports.Module = Module
+
+exports.ModuleTests = ->
+
+  Ham =
+    describe: ->
+      "#{ @attributes.join ', ' } ham."
+  Tasty =
+    attributes: ["tasty"]
+
+  class TastyHam extends Module
+    @include Tasty
+    @include Ham
+
+  th = new TastyHam
+
+  console.log th.describe()

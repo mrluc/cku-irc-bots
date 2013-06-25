@@ -21,6 +21,7 @@ class ResponderBot extends Module
 
   known_bots: ["bingbot", "camsnap", "jarjarmuppet", "derpo", "tweeto"]
 
+  patterns: []
   constructor: ({@connect, @server, @channel, @name, @patterns })->
     @_ = _
     if @connect
@@ -28,7 +29,7 @@ class ResponderBot extends Module
       @client.addListener 'message', @handle_message
       @client.addListener "error", (m)-> console.log m
       @setup_nicks()
-    @patterns ?= []
+    # @patterns ?= []
 
   extract_channel_message: ( {commandType, args: [chan, message]} ) =>
     message if chan is @channel
@@ -49,5 +50,7 @@ class ResponderBot extends Module
   say: (message)=>
     @client.say @channel, message if @client
     console.log "Saying: #{ message }"
+
+  logif: (e)-> console.log e if e
 
 module.exports = ResponderBot
