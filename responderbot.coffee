@@ -1,7 +1,8 @@
 irc = require 'irc'
+{Module} = require './extensions'
 _ = require 'underscore'
 
-class ResponderBot
+class ResponderBot extends Module
   # public nicks functionality
   setup_nicks: ()=> @client.addListener "names#{ @channel }", @on_names
   on_nicks_changed: (@nicks)=> # override me!
@@ -20,13 +21,15 @@ class ResponderBot
 
   known_bots: ["bingbot", "camsnap", "jarjarmuppet", "derpo", "tweeto"]
 
+  patterns: []
   constructor: ({@connect, @server, @channel, @name, @patterns })->
+    @_ = _
     if @connect
       @client = new irc.Client @server, @name, channels: [@channel]
       @client.addListener 'message', @handle_message
       @client.addListener "error", (m)-> console.log m
       @setup_nicks()
-    @patterns ?= []
+    # @patterns ?= []
 
   extract_channel_message: ( {commandType, args: [chan, message]} ) =>
     message if chan is @channel
@@ -47,5 +50,7 @@ class ResponderBot
   say: (message)=>
     @client.say @channel, message if @client
     console.log "Saying: #{ message }"
+
+  logif: (e)-> console.log e if e
 
 module.exports = ResponderBot
