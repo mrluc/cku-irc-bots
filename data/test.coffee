@@ -18,19 +18,20 @@ classify = ->
   console.log bayes.getCats()
   console.log bayes.getCats("fuk")
 
-fs.readFile 'cku1.txt', 'utf8', (e, d)->
-  console.log e if e
+d = fs.readFileSync './data/cku1.txt', 'utf8' #, (e, d)->
 
-  a = d.split /\d\d\:\d\d /i
+a = d.split /\d\d\:\d\d /i
 
-  for line in a
-    msg = line.replace("\n","").replace(/\s+/g, " ")
+for line in a
+  msg = line.replace("\n","").replace(/\s+/g, " ")
 
-    if match = msg.match /^<(\S+)> (.+)*/i
-      [original, nick, txt] = match
-      nicks[nick] = [] unless nicks[nick]
-      nicks[nick].push txt
-      #console.log [nick, txt]
+  if match = msg.match /^<(\S+)> (.+)*/i
+    [original, nick, txt] = match
+    nicks[nick] = [] unless nicks[nick]
+    nicks[nick].push txt
+
   #console.log "\t#{msgs.length}\t#{name}" for name, msgs of nicks
 
-  classify()
+# classify()
+
+module.exports = nicks
