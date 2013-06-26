@@ -47,13 +47,19 @@ exports.SentimentAnalysisMixin =
 
   analyze_feelings: (feels)-> "Feelio feelings analysis: #{ JSON.stringify feels }".replace('\n',' ')
 
-  # sentiment only accepts lowercase letters for extending
-  # its list, so we have to munge
+  # Supports the wordlist extension syntax above, building
+  # the new score hash for each sentences we evaluate.
+  # 
+  # Sentiment lets you extend its wordlist,
+  # 
   #   sentiment( words, {badword: -3, good: 2}, callback )
-  # but it only accepts lowercase letters, so we need to
-  # re-encode those words into the sentence as lowercase,
-  # and attach our scores to those -- lets us feel all
-  # kinds of tokens.
+  #  
+  # but it only accepts lowercase letters, ie "+1" is ignored.
+  # 
+  # So we re-encode words detected by regexes or custom functions
+  # into the sentence as unique lowercase words, and attach the
+  # scores to those words.
+  # 
   _build_word_scores: (words, scorers = @word_scorers) ->
     throw "needs array or string" unless @_.isArray(words) or @_.isString(words)
     words = words.split(' ') if @_.isArray words
