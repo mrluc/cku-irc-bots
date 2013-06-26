@@ -1,5 +1,3 @@
-util = require 'util'
-_ = require 'underscore'
 Responder = require './responderbot'
 {SentimentAnalysisMixin, MaybeMixin} = require './mixins'
 
@@ -8,8 +6,8 @@ class Feelio extends Responder
   @include SentimentAnalysisMixin
 
   word_scorers: [
-    {":)": 3}
-    {":(": -3}
+    {re: /\:\)/, args: 0, score: 3}
+    {re: /\:\(/, args: 0, score: -3}
     {re: /^\-([0-9])+$/, args: 1, score: -3}
     {re: /^\+([0-9])+$/, args: 1, score: 3}
     {re: /^fuk/i, args: 0, score: -5}
