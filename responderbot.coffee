@@ -19,7 +19,7 @@ class ResponderBot extends Module
     @nicks = (nick for nick of nicks) # for some reason, gives us name: '' pairs
     @when_names_change @nicks
 
-  known_bots: ["bingbot", "camsnap", "jarjarmuppet", "derpo", "tweeto"]
+  known_bots: ["bingbot", "camsnap", "jarjarmuppet", "derpo", "tweeto", "scorpio"]
 
   patterns: []
   constructor: ({@connect, @server, @channel, @name, @patterns })->
@@ -29,7 +29,7 @@ class ResponderBot extends Module
       @client.addListener 'message', @handle_message
       @client.addListener "error", (m)-> console.log m
       @setup_nicks()
-    # @patterns ?= []
+    @patterns ?= []
 
   extract_channel_message: ( {commandType, args: [chan, message]} ) =>
     message if chan is @channel
