@@ -18,7 +18,7 @@ exports.MaybeMixin =
 #  Overriding: @strongly_felt, @word_scorers
 exports.SentimentAnalysisMixin =
 
-  "_": require 'underscore'
+  _: require 'underscore'
   _sentiment: require 'sentiment'
 
   feel: (sentence, callback)->
@@ -63,7 +63,7 @@ exports.SentimentAnalysisMixin =
   _build_word_scores: (words, scorers = @word_scorers) ->
     throw "needs array or string" unless @_.isArray(words) or @_.isString(words)
     words = words.split(' ') if @_.isArray words
-    @word_scores = {}
+    @word_scores ?= {}
 
     uniq = (s="oye"; -> s+="z") #gensymilar
 
