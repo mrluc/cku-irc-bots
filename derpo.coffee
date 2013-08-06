@@ -1,8 +1,6 @@
 Responder = require './responderbot'
 google = require './google'
-images = require 'google-images'
-mdb = require 'nodejs-microdb'
-{Bayesian} = require 'classifier'
+request = require 'request'
 
 class Derpo extends Responder
 
@@ -10,9 +8,6 @@ class Derpo extends Responder
     config.name = "derpo"
     config.connect = yes
     super config
-
-    # we won't use this here, right?
-    @classifier = new Bayesian
 
     @client.addListener 'nick', (oldn, newn, chans, msg)=>
       @say "#{oldn} changed to #{newn}"
@@ -72,27 +67,22 @@ class Derpo extends Responder
         return say me if you in losers or me in winners
         return say you if me in losers or you in winners
         say if Math.random() > 0.5 then me else you
-    #,
-    #  recognize: @re /^trygif (.+)*/i
-    #  respond: (m,o,say)=>
-    #    term = @match_to_term m
-    #    google "gif #{term} site:imgur.com", (e,n,links) =>
-    #      is_imgur = (link)-> yes
-    #      @picky_pick links, is_imgur, ({href})=>
-    #        #href = href.replace "/gallery", ""
-    #        key = href.split("/").reverse()[0]
-    #        say "http://imgur.com/#{key}.gif"
     ,
       recognize: @re /^trygif (.+)*/i
       respond: (m,o,say)=>
         term = @match_to_term m
-        try images.search "#{term} gif", (err,imgs) =>
-          for {unescapedUrl, height, width} in imgs when width > 200 and unescapedUrl.indexOf(".gif") isnt -1
-            return say( unescapedUrl )
+        try @image_search "#{term} gif", (err,imgs) =>
+          return say( img.unescapedUrl ) for img in imgs when img.width > 200 and img.unescapedUrl.indexOf(".gif") isnt -1
           say "hard luck"
         catch err
           say "dude. #{err}"
     ]
+
+  image_search: (query, callback) =>
+    request "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=#{ query.replace(/\s/g, '+') }&start=#{ page=0 }", (err, res, body) ->
+      try callback no, JSON.parse(body).responseData.results
+      catch err
+        callback err, []
 
   match_to_term: (m)-> m[1..].join(" ").toLowerCase()
 
