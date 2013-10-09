@@ -2,17 +2,40 @@ Responder = require './responderbot'
 google = require './google'
 request = require 'request'
 
+twilio = require('twilio')( require('./twilio_config').args... )
+last_message = "ham"
+port = 4000
+done = no
 class Derpo extends Responder
 
   constructor: ( config )->
     config.name = "derpo"
-    config.connect = yes
+    # config.connect = yes
+    # config.channel = "#scratch"
     super config
 
-    @client.addListener 'nick', (oldn, newn, chans, msg)=>
+    @client?.addListener 'nick', (oldn, newn, chans, msg)=>
       @say "#{oldn} changed to #{newn}"
 
     @patterns = [
+      recognize: @re /^lololol (.+)*/i
+      respond: (m,o,say) =>
+        return if done
+        done = yes
+        [to,body...] = m[1].split(" ")
+        body = body.join(" ")
+        last_message = body
+        url = "http://callinline.com/in"
+        from = "+18778525408"
+        say JSON.stringify msg = {to, from, body}
+        call = {to,from,url}
+        twilio.makeCall call, (err, resp)=>
+          console.log err, resp
+          if err
+            say "error"
+          else
+            say "#{resp.status}, to:#{resp.to}'"
+    ,
       recognize: @re /^homies\?/i
       respond: (m,o,say) =>
         @get_nicks => say @nicks.join " "
@@ -54,7 +77,7 @@ class Derpo extends Responder
         term = @match_to_term m
         google "how to #{ term }", (e,n,links)=> say @pick1 links, yes
     ,
-      recognize: @re /^who wins between (\w+) (and|or) (\w+)\?*/i
+      recognize: @re /^who wins between (\S+) (and|or) (\S+)\?*/i
       respond: ([x..., me, sep, you], o, say)=>
         winners = ['coffeescript','white_stripes','blues','ruby','torpedo','lisp',
           'macros','mrluc', 'ddg','derpo','tweeto','duckduckgo','zepplin','beer',
@@ -62,7 +85,7 @@ class Derpo extends Responder
         ]
         losers = ['php','java','ms','microsoft','accounting','C#','.net','dotnet',
           'sql','Michelle_Monahan','pema','darkcypher_bit','tenrox','VisualStudio',
-          'vs', 'vs2012','eclipse'
+          'vs', 'vs2012','eclipse','vikings','thevikings','Vikings'
         ]
         return say me if you in losers or me in winners
         return say you if me in losers or you in winners
@@ -91,11 +114,26 @@ class Derpo extends Responder
 
   pick1: (links, show = yes)->
     for {description, title, href} in links when description.length > 2
-      return @cleanup "[#{title}] #{ description } #{ if show then href else '' }"
+      desc_length = 275 - title.length - (href?.length or 0)
+      return @cleanup "[#{title}] #{ description?[0..desc_length] } #{ if show then href else '' }"
 
   cleanup: (s)-> s=s.replace "   ", " "
 
 bot = new Derpo require( './irc_config' )
+
+express = require 'express'
+app = express()
+
+app.get "/in", (req,res)->
+  response = """<?xml version="1.0" encoding="UTF-8"?>
+  <Response>
+    <Say voice="woman">#{last_message}</Say>
+    <Hangup/>
+  </Response>"""
+  res.send response
+
+app.listen(port)
+console.log "Listening on #{port}"
 
 unless bot.connect
   bot.match "where is san lorenzo, ecuador?"

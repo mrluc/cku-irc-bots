@@ -21,6 +21,7 @@ class Imgo extends ResponderBot
         say "camsnap #{ matched }"
     ,
       recognize: (s,msg_info) =>
+        console.log msg_info
         if msg_info.nick is "bingbot" and s.match /^http\:\/\/(.+)*(jpg|png)/i
         #if s.match /^http\:\/\/\w+.mm.bing.net\//i
           console.log "wow it matched"
@@ -34,18 +35,18 @@ class Imgo extends ResponderBot
 
   rand: (n)-> parseInt Math.random() * n
   onImage: (url, say) =>
-    #facer = new Facer {
-    #  url,
-    #  dir: "./cv/tmp"
-    #  faceplant: "./cv/ham#{ @rand 3 }.png"
-    #}
+    facer = new Facer {
+      url,
+      dir: "./cv/tmp"
+      faceplant: "./cv/ham#{ @rand 3 }.png"
+    }
     overlay = new OverlayImage {
       url,
       dir: "./cv/tmp"
       overlay: "./cv/ham#{ @rand 3 }.png"
     }
 
-    overlay.go (file_path, cleanup) =>
+    facer.go (file_path, cleanup) =>
       @upload file_path, (link) =>
         if link
           say "More like #{ link }"
