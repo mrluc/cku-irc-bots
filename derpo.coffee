@@ -2,6 +2,7 @@ Responder = require './responderbot'
 google = require './google'
 request = require 'request'
 
+# split this twilio junk out, dawg
 twilio = require('twilio')( require('./twilio_config').args... )
 last_message = "ham"
 port = 4000
@@ -10,8 +11,6 @@ class Derpo extends Responder
 
   constructor: ( config )->
     config.name = "derpo"
-    # config.connect = yes
-    # config.channel = "#scratch"
     super config
 
     @client?.addListener 'nick', (oldn, newn, chans, msg)=>
@@ -26,7 +25,7 @@ class Derpo extends Responder
         body = body.join(" ")
         last_message = body
         url = "http://callinline.com/in"
-        from = "+18778525408"
+        from = "use the number from twilio config dawg"
         say JSON.stringify msg = {to, from, body}
         call = {to,from,url}
         twilio.makeCall call, (err, resp)=>
@@ -77,15 +76,15 @@ class Derpo extends Responder
         term = @match_to_term m
         google "how to #{ term }", (e,n,links)=> say @pick1 links, yes
     ,
-      recognize: @re /^who wins between (\S+) (and|or) (\S+)\?*/i
-      respond: ([x..., me, sep, you], o, say)=>
+      recognize: @re /who wins between\s(.*)\s(?:and|or)\s([^\?]*)/i
+      respond: ([x..., message, me, you], o, say)=>
         winners = ['coffeescript','white_stripes','blues','ruby','torpedo','lisp',
           'macros','mrluc', 'ddg','derpo','tweeto','duckduckgo','zepplin','beer',
           'kelly', 'John_Harasyn','emacs','Emacs'
         ]
         losers = ['php','java','ms','microsoft','accounting','C#','.net','dotnet',
-          'sql','Michelle_Monahan','pema','darkcypher_bit','tenrox','VisualStudio',
-          'vs', 'vs2012','eclipse','vikings','thevikings','Vikings'
+          'sql','pema','darkcypher_bit','tenrox','VisualStudio',
+          'vs', 'vs2012','eclipse', "the vikings"
         ]
         return say me if you in losers or me in winners
         return say you if me in losers or you in winners
@@ -137,3 +136,4 @@ console.log "Listening on #{port}"
 
 unless bot.connect
   bot.match "where is san lorenzo, ecuador?"
+  bot.match "who wins between athaeryn's new bad-ass regex and the-old-regex"
