@@ -54,15 +54,15 @@ class Derpo extends Responder
         term = @match_to_term m
         google "how to #{ term }", (e,n,links)=> say @pick1 links, yes
     ,
-      recognize: @re /^who wins between (\w+) (and|or) (\w+)\?*/i
-      respond: ([x..., me, sep, you], o, say)=>
+      recognize: @re /who wins between\s(.*)\s(?:and|or)\s([^\?]*)/i
+      respond: ([x..., message, me, you], o, say)=>
         winners = ['coffeescript','white_stripes','blues','ruby','torpedo','lisp',
           'macros','mrluc', 'ddg','derpo','tweeto','duckduckgo','zepplin','beer',
           'kelly', 'John_Harasyn','emacs','Emacs'
         ]
         losers = ['php','java','ms','microsoft','accounting','C#','.net','dotnet',
           'sql','Michelle_Monahan','pema','darkcypher_bit','tenrox','VisualStudio',
-          'vs', 'vs2012','eclipse'
+          'vs', 'vs2012','eclipse', "Michelle Monahan"
         ]
         return say me if you in losers or me in winners
         return say you if me in losers or you in winners
@@ -99,3 +99,4 @@ bot = new Derpo require( './irc_config' )
 
 unless bot.connect
   bot.match "where is san lorenzo, ecuador?"
+  bot.match "who wins between athaeryn's new bad-ass regex and the-old-regex"
